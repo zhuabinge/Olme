@@ -17,13 +17,15 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.kubang.olme.activity.MainActivity_"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.kubang.olme.activity.LoginActivity_"></activity>
     </application>
 
 </manifest>
