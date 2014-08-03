@@ -4,7 +4,9 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="40dip"
     android:layout_marginTop="40dip"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
 
     <ListView
         android:id="@+id/listview"

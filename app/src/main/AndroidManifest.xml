@@ -25,6 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.kubang.olme.activity.BtnLoginActivity_"></activity>
         <activity android:name="com.kubang.olme.activity.LoginActivity_"></activity>
     </application>
 

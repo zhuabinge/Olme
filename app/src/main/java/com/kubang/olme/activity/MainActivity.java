@@ -3,9 +3,11 @@ package com.kubang.olme.activity;
 import java.util.ArrayList;
 import java.util.List;
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -32,6 +34,9 @@ public class MainActivity extends Activity {
 
 	@ViewById(R.id.morebt)
 	ImageView morebt;
+
+    @ViewById(R.id.button1)
+    Button button;
 
 	@Bean
 	DataSource data;
@@ -89,6 +94,12 @@ public class MainActivity extends Activity {
 		list.add(view5);
 		viewpager.setAdapter(new Myadapter(list));
 		viewpager.setOnPageChangeListener(new MyOnPageChangeListener(textviewList,currIndex));
+//        button.setOnClickListener();
 	}
+
+    public void onClick(View v) {
+        Intent intent = new Intent(this,LoginActivity_.class);
+        startActivity(intent);
+     }
 }
 
