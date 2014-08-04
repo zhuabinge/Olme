@@ -18,30 +18,14 @@ import org.androidannotations.annotations.ViewById;
  */
 
 public class BtnLoginActivity extends Activity{
-//    @ViewById(R.id.button1)
-//    Button button;
-//
-//    @Click(R.id.button1)
-//    public void buttonIsClick(){
-//        Intent intent = new Intent(BtnLoginActivity.this,LoginActivity_.class);
-//        startActivity(intent);
-//    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.tab2);
-        //LayoutInflater inflaters = getLayoutInflater();
-//        Button button = (Button) (inflaters.inflate(R.layout.tab2, null))
-//                .findViewById(R.id.button1);
-//        Button button  = (Button)findViewById(R.id.button1);
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Log.i("333","test");
-//                Intent intent = new Intent(BtnLoginActivity.this,LoginActivity_.class);
-//                startActivity(intent);
-//            }
-//        });
+        setContentView(R.layout.activity_main);
+        //Button button  = (Button)MainActivity.list.get(1).findViewById(R.id.button1);
+   }
+    public void onClick(View v) {
+        Intent intent = new Intent(this,LoginActivity_.class);
+        startActivity(intent);
     }
 }
