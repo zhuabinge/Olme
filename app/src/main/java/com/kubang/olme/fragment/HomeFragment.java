@@ -1,13 +1,16 @@
 package com.kubang.olme.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.kubang.olme.activity.ItemInfoActivity_;
 import com.kubang.olme.activity.R;
 import com.kubang.olme.dataSource.DataSource;
 
@@ -31,11 +34,19 @@ public class HomeFragment extends Fragment{
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         View view = inflater.inflate(R.layout.tab1, null);
-        ListView listView1 = (ListView) view.findViewById(R.id.listview);
+        final ListView listView1 = (ListView) view.findViewById(R.id.listview);
         adapter = new SimpleAdapter(getActivity(), data.getDataSource(), R.layout.item,
                 new String[] { "img", "username", "phone", "address" },
                 new int[] { R.id.img, R.id.username, R.id.phone, R.id.address });
         listView1.setAdapter(adapter);
+        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(),ItemInfoActivity_.class);
+                intent.putExtra("itemIndex",position);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 

@@ -3,9 +3,11 @@ package com.kubang.olme.activity;
 import android.app.Activity;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.kubang.olme.api.OlmeApi;
 import com.kubang.olme.domain.TUser;
+
 import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
@@ -16,6 +18,9 @@ import org.springframework.web.client.HttpStatusCodeException;
 
 @EActivity(R.layout.activity_login)
 public class LoginActivity extends Activity {
+
+    @ViewById(R.id.returnbt)
+    ImageView returnbt;
 
     @ViewById(R.id.et_username)
     EditText etUsername;
@@ -38,6 +43,11 @@ public class LoginActivity extends Activity {
         username = etUsername.getText().toString().trim();
         password = etPassword.getText().toString().trim();
         login(username,password);
+    }
+
+    @Click(R.id.returnbt)
+    void returnbtIsClick(){
+        LoginActivity.this.finish();
     }
 
     @Background

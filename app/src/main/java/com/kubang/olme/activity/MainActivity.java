@@ -2,22 +2,14 @@ package com.kubang.olme.activity;
 
 import java.util.ArrayList;
 import java.util.List;
-import android.app.Activity;
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.kubang.olme.adapter.Myadapter;
-import com.kubang.olme.dataSource.DataSource;
 import com.kubang.olme.fragment.ClassFragment;
 import com.kubang.olme.fragment.DiscussFragment;
 import com.kubang.olme.fragment.HomeFragment;
@@ -27,7 +19,6 @@ import com.kubang.olme.onClickListener.MyOnClickListener;
 import com.kubang.olme.onPageChangeListener.MyOnPageChangeListener;
 
 import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
@@ -43,7 +34,22 @@ public class MainActivity extends FragmentActivity {
 	@ViewById(R.id.morebt)
 	ImageView morebt;
 
-	private TextView head, classes, discuss, personal, recommend;
+    @ViewById(R.id.headpage)
+    TextView head;
+
+    @ViewById(R.id.classpage)
+    TextView classes;
+
+    @ViewById(R.id.discusspage)
+    TextView discuss;
+
+    @ViewById(R.id.personalpage)
+    TextView personal;
+
+    @ViewById(R.id.recommendpage)
+    TextView recommend;
+
+//	private TextView head, classes, discuss, personal, recommend;
     private List<TextView> textviewList;
     private Myadapter adapters;
     private int currIndex = 0;// 当前页卡编号
@@ -57,11 +63,11 @@ public class MainActivity extends FragmentActivity {
 	}
 
 	public void initTextView() {
-		head = (TextView) findViewById(R.id.headpage);
-		classes = (TextView) findViewById(R.id.classpage);
-		discuss = (TextView) findViewById(R.id.discusspage);
-		personal = (TextView) findViewById(R.id.personalpage);
-		recommend = (TextView) findViewById(R.id.recommendpage);
+//		head = (TextView) findViewById(R.id.headpage);
+//		classes = (TextView) findViewById(R.id.classpage);
+//		discuss = (TextView) findViewById(R.id.discusspage);
+//		personal = (TextView) findViewById(R.id.personalpage);
+//		recommend = (TextView) findViewById(R.id.recommendpage);
 		textviewList = new ArrayList<TextView>();
 		textviewList.add(head);
 		textviewList.add(classes);
