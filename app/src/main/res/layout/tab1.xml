@@ -6,7 +6,8 @@
     android:layout_marginTop="40dip"
     android:orientation="vertical"
     android:paddingLeft="10dp"
-    android:paddingRight="10dp">
+    android:paddingRight="10dp"
+    android:background="@drawable/abc_ab_bottom_transparent_light_holo">
 
     <ListView
         android:id="@+id/listview"

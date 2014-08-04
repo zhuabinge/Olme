@@ -11,10 +11,10 @@ import android.view.Choreographer;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Myadapter extends FragmentPagerAdapter {
+public class MyFragmentadapter extends FragmentPagerAdapter {
     private FragmentManager fm;
     private List<Fragment> list;
-    public Myadapter(FragmentManager fm ,List<Fragment> list) {
+    public MyFragmentadapter(FragmentManager fm, List<Fragment> list) {
         super(fm);
         this.fm = fm;
         this.list = list;
