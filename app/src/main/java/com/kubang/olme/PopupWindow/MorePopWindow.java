@@ -9,10 +9,14 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.SimpleAdapter;
 
 import com.kubang.olme.activity.R;
+import com.kubang.olme.dataSource.popupDataSource;
 
 /**
  * Created by Bingo on 2014/8/4.
@@ -20,23 +24,31 @@ import com.kubang.olme.activity.R;
 public class MorePopWindow extends PopupWindow {
     private View conentView;
     private Button btn_cancel;
-
+    private SimpleAdapter adapter;
+    popupDataSource data;
 
     public MorePopWindow(final Activity context) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        conentView = inflater.inflate(R.layout.more_popup_dialog, null);
-        btn_cancel = (Button) conentView.findViewById(R.id.btn_cancel);
-        //取消按钮
-        btn_cancel.setOnClickListener(new View.OnClickListener() {
+        conentView = inflater.inflate(R.layout.more_popup_dialog1, null);
+        ListView listView1 = (ListView) conentView.findViewById(R.id.popupListview);
+        adapter = new SimpleAdapter(context,data.getData() , R.layout.popup_item1,
+                new String[] { "popupimage", "popuptext" },
+                new int[] { R.id.popupimage, R.id.popuptext});
+        listView1.setAdapter(adapter);
+        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    case 0:break;
+                    case 1:break;
+                    case 2:showTips(context);break;
+                    default:break;
+                }
 
-            public void onClick(View v) {
-                //销毁弹出框
-                //SaveDate.saveDate(context, new OAuthV2());
-                showTips(context);
-                //context.finish();
             }
         });
+
         int h = context.getWindowManager().getDefaultDisplay().getHeight();
         int w = context.getWindowManager().getDefaultDisplay().getWidth();
         // 设置SelectPicPopupWindow的View
@@ -63,6 +75,7 @@ public class MorePopWindow extends PopupWindow {
     public void showPopupWindow(View parent) {
         if (!this.isShowing()) {
             this.showAsDropDown(parent, parent.getLayoutParams().width / 2, 18);
+            //this.sh
         } else {
             this.dismiss();
         }
