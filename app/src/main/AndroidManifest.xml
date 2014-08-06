@@ -25,9 +25,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ItemInfoActivity_"
+        <activity android:name="com.kubang.olme.activity.ItemInfoActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
-        <activity android:name=".LoginActivity_"
+        <activity android:name="com.kubang.olme.activity.LoginActivity_"
+        android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity android:name="com.kubang.olme.activity.RegisterActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
     </application>
 

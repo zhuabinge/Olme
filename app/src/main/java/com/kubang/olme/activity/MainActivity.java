@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -63,10 +66,12 @@ public class MainActivity extends FragmentActivity {
     private int currIndex = 0;// 当前页卡编号
     private FragmentManager manager;
     private List<Fragment> list = null;
+    private LayoutInflater inflater;
+    private View views;
 
     @Click(R.id.morebt)
     void morebtIsClick() {
-        MorePopWindow morePopWindow = new MorePopWindow(MainActivity.this);
+        MorePopWindow morePopWindow = new MorePopWindow(MainActivity.this, views);
         morePopWindow.showPopupWindow(morebt);
     }
 
@@ -75,6 +80,10 @@ public class MainActivity extends FragmentActivity {
     void init() {
         initTextView();
         initViewPager();
+        inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        views = inflater.inflate(    //获取自定义布局文件dialog.xml的视图
+                R.layout.activity_main, null, false);
     }
 
     public void initTextView() {
@@ -105,7 +114,6 @@ public class MainActivity extends FragmentActivity {
         viewpager.setAdapter(adapters);
         viewpager.setOnPageChangeListener(new MyOnPageChangeListener(textviewList, currIndex));
         adapters.notifyDataSetChanged();
-        ;
     }
 }
 

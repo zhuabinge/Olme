@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,7 @@ public class MorePopWindow extends PopupWindow {
     private SimpleAdapter adapter;
     popupDataSource data;
 
-    public MorePopWindow(final Activity context) {
+    public MorePopWindow(final Activity context,final View views) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         conentView = inflater.inflate(R.layout.more_popup_dialog1, null);
@@ -42,7 +43,7 @@ public class MorePopWindow extends PopupWindow {
                 switch (position){
                     case 0:break;
                     case 1:break;
-                    case 2:showTips(context);break;
+                    case 2:dismiss();new LogoutPopupWindow(context,views);break;
                     default:break;
                 }
 

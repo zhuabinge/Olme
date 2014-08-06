@@ -1,6 +1,7 @@
 package com.kubang.olme.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -31,6 +32,9 @@ public class LoginActivity extends Activity {
     @ViewById(R.id.btn_login)
     Button btn;
 
+    @ViewById(R.id.btn_register)
+    Button btr;
+
     @RestService
     OlmeApi olmeApi;
 
@@ -43,6 +47,12 @@ public class LoginActivity extends Activity {
         username = etUsername.getText().toString().trim();
         password = etPassword.getText().toString().trim();
         login(username,password);
+    }
+
+    @Click(R.id.btn_register)
+    void buttonIsClick(){
+        Intent intent = new Intent(this,RegisterActivity_.class);
+        startActivity(intent);
     }
 
     @Click(R.id.returnbt)
