@@ -3,7 +3,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/background"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:gravity="center">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -22,11 +23,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="45dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:layout_marginTop="80dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -37,38 +35,41 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="邮       箱::"
-                android:textSize="20sp" />
+                android:text="邮       箱:"/>
 
             <EditText
                 android:id="@+id/rg_username"
-                android:layout_width="200dp"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="常用邮箱地址"
-                android:textColor="#c6cfd1" />
+                android:inputType="textEmailAddress"
+                android:hint="常用邮箱地址"
+                android:maxLines="1"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="密        码:"
-                android:textSize="20sp" />
+                android:text="密        码:"/>
 
             <EditText
                 android:id="@+id/rg_password"
-                android:layout_width="200dp"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="6-15位字符"
-                android:textColor="#c6cfd1" />
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:hint="6-20字符"
+                android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:maxLength="20"/>
         </LinearLayout>
 
         <LinearLayout
@@ -80,34 +81,33 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="确认密码:"
-                android:textSize="20sp" />
+                android:text="确认密码:"/>
 
             <EditText
                 android:id="@+id/rg_surepassword"
-                android:layout_width="200dp"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="请再次输入密码"
-                android:textColor="#c6cfd1" />
+                android:inputType="textPassword"
+                android:hint="请输入确认密码"
+                android:maxLines="1"
+                android:maxLength="20"/>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btn_register"
-                android:layout_width="120dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="50dp"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
                 android:background="#0360f9"
                 android:text="注册"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
         </LinearLayout>
-
     </LinearLayout>
 </RelativeLayout>

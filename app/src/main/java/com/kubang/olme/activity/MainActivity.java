@@ -3,20 +3,17 @@ package com.kubang.olme.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Typeface;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.kubang.olme.PopupWindow.MorePopWindow;
@@ -61,6 +58,18 @@ public class MainActivity extends FragmentActivity {
     @ViewById(R.id.recommendpage)
     TextView recommend;
 
+    @ViewById(R.id.et_username)
+    EditText etUsername;
+
+    @ViewById(R.id.et_password)
+    EditText etPassword;
+
+    @ViewById(R.id.checkboxpw)
+    CheckBox cbpassword;
+
+    @ViewById(R.id.checkboxlg)
+    CheckBox cblogin;
+
     private List<TextView> textviewList;
     private MyFragmentadapter adapters;
     private int currIndex = 0;// 当前页卡编号
@@ -68,6 +77,8 @@ public class MainActivity extends FragmentActivity {
     private List<Fragment> list = null;
     private LayoutInflater inflater;
     private View views;
+    private SharedPreferences sp;
+    private CustomApplication app;
 
     @Click(R.id.morebt)
     void morebtIsClick() {
@@ -80,8 +91,8 @@ public class MainActivity extends FragmentActivity {
     void init() {
         initTextView();
         initViewPager();
+        initLogin();
         inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
         views = inflater.inflate(    //获取自定义布局文件dialog.xml的视图
                 R.layout.activity_main, null, false);
     }
@@ -114,6 +125,26 @@ public class MainActivity extends FragmentActivity {
         viewpager.setAdapter(adapters);
         viewpager.setOnPageChangeListener(new MyOnPageChangeListener(textviewList, currIndex));
         adapters.notifyDataSetChanged();
+    }
+
+    public void initLogin(){
+        app = (CustomApplication) getApplication();
+        sp = this.getSharedPreferences("userInfo", 0);
+        System.out.println("-------> " + sp.getBoolean("ISCHECK", false));
+        System.out.println("-------> " + app.getValue());
+        if(sp.getBoolean("ISCHECK", false))
+        {
+            //判断自动登陆多选框状态
+            if(sp.getBoolean("AUTO_ISCHECK", false))
+            {
+                app.setValue("login");
+                System.out.println("-------> " + app.getValue());
+                //跳转界面
+//                Intent intent = new Intent(LoginActivity.this,LogoActivity.class);
+//                LoginActivity.this.startActivity(intent);
+
+            }
+        }
     }
 }
 

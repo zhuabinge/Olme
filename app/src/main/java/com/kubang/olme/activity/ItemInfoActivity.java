@@ -15,6 +15,7 @@ import com.kubang.olme.dataSource.DataSource;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
@@ -40,6 +41,12 @@ public class ItemInfoActivity extends Activity{
 
     @Bean
     DataSource data;
+
+    @Click(R.id.returnbt)
+    void buttionIsClick(){
+        ItemInfoActivity.this.finish();
+    }
+
 
     @AfterViews
     void ShowInfo(){
