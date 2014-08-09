@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.kubang.olme.application.ExitApplication;
 import com.kubang.olme.dataSource.DataSource;
 
 import org.androidannotations.annotations.AfterViews;
@@ -50,6 +51,7 @@ public class ItemInfoActivity extends Activity{
 
     @AfterViews
     void ShowInfo(){
+        ExitApplication.getInstance().addActivity(this);
         Intent intent = getIntent();
         int index = intent.getIntExtra("itemIndex", 0);
         System.out.println("-------->   " + index);

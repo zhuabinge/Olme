@@ -1,12 +1,11 @@
 package com.kubang.olme.PopupWindow;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +16,7 @@ import android.widget.PopupWindow;
 import android.widget.SimpleAdapter;
 
 import com.kubang.olme.activity.R;
+import com.kubang.olme.application.ExitApplication;
 import com.kubang.olme.dataSource.popupDataSource;
 
 /**
@@ -43,7 +43,7 @@ public class MorePopWindow extends PopupWindow {
                 switch (position){
                     case 0:break;
                     case 1:break;
-                    case 2:dismiss();new LogoutPopupWindow(context,views);break;
+                    case 2:dismiss();new LogoutPopWindow(context,views);break;
                     default:break;
                 }
 
@@ -87,7 +87,10 @@ public class MorePopWindow extends PopupWindow {
                 .setMessage("是否退出程序")
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        android.os.Process.killProcess(android.os.Process.myPid());
+//                        final  ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+//                        am.restartPackage(getPackageName());
+//                        android.os.Process.killProcess(android.os.Process.myPid());
+                        ExitApplication.getInstance().exit();
                     }
 
                 }).setNegativeButton("取消",

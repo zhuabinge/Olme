@@ -18,6 +18,8 @@ import android.widget.TextView;
 
 import com.kubang.olme.PopupWindow.MorePopWindow;
 import com.kubang.olme.adapter.MyFragmentadapter;
+import com.kubang.olme.application.CustomApplication;
+import com.kubang.olme.application.ExitApplication;
 import com.kubang.olme.fragment.ClassFragment;
 import com.kubang.olme.fragment.DiscussFragment;
 import com.kubang.olme.fragment.HomeFragment;
@@ -83,7 +85,12 @@ public class MainActivity extends FragmentActivity {
     @Click(R.id.morebt)
     void morebtIsClick() {
         MorePopWindow morePopWindow = new MorePopWindow(MainActivity.this, views);
-        morePopWindow.showPopupWindow(morebt);
+        morePopWindow.showPopupWindow(morebt);  //显示more窗口
+    }
+
+    @Click(R.id.searchbt)
+    void searchIsClick(){
+
     }
 
 
@@ -92,6 +99,7 @@ public class MainActivity extends FragmentActivity {
         initTextView();
         initViewPager();
         initLogin();
+        ExitApplication.getInstance().addActivity(this);
         inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         views = inflater.inflate(    //获取自定义布局文件dialog.xml的视图
                 R.layout.activity_main, null, false);
@@ -105,7 +113,7 @@ public class MainActivity extends FragmentActivity {
         textviewList.add(personal);
         textviewList.add(recommend);
         head.setBackgroundColor(android.graphics.Color.parseColor("#00BFFF")); //设置起始背景色
-        head.setOnClickListener(new MyOnClickListener(viewpager, textviewList, 0));
+        head.setOnClickListener(new MyOnClickListener(viewpager, textviewList, 0));   //监听TextView的点击事件
         classes.setOnClickListener(new MyOnClickListener(viewpager, textviewList, 1));
         discuss.setOnClickListener(new MyOnClickListener(viewpager, textviewList, 2));
         personal.setOnClickListener(new MyOnClickListener(viewpager, textviewList, 3));
@@ -123,7 +131,7 @@ public class MainActivity extends FragmentActivity {
         // transaction = manager.beginTransaction();
         adapters = new MyFragmentadapter(manager, list);
         viewpager.setAdapter(adapters);
-        viewpager.setOnPageChangeListener(new MyOnPageChangeListener(textviewList, currIndex));
+        viewpager.setOnPageChangeListener(new MyOnPageChangeListener(list,textviewList, currIndex));   //监听ViewPager的变化事件
         adapters.notifyDataSetChanged();
     }
 
@@ -137,7 +145,7 @@ public class MainActivity extends FragmentActivity {
             //判断自动登陆多选框状态
             if(sp.getBoolean("AUTO_ISCHECK", false))
             {
-                app.setValue("login");
+                app.setValue("Login");  //设置登陆状态
                 System.out.println("-------> " + app.getValue());
                 //跳转界面
 //                Intent intent = new Intent(LoginActivity.this,LogoActivity.class);

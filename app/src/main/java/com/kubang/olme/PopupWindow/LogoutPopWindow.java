@@ -21,6 +21,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.kubang.olme.activity.R;
+import com.kubang.olme.application.ExitApplication;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,12 +29,11 @@ import java.util.List;
 /**
  * Created by Bingo on 2014/8/5.
  */
-public class LogoutPopupWindow {
-    private View conentView;
+public class LogoutPopWindow {
     private PopupWindow popupWindow;
     private ListView listView;
 
-    public LogoutPopupWindow(final Activity context,final View view) {
+    public LogoutPopWindow(final Activity context, final View view) {
 //        List<String> list = new ArrayList<String>();
 //        list.add("退出");
 //        list.add("注销");
@@ -71,7 +71,8 @@ public class LogoutPopupWindow {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                android.os.Process.killProcess(android.os.Process.myPid());
+                //android.os.Process.killProcess(android.os.Process.myPid());
+                ExitApplication.getInstance().exit();
             }
         });
 
