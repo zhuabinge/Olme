@@ -31,7 +31,7 @@ public class MyOnPageChangeListener implements OnPageChangeListener {
 	
 	@Override
 	public void onPageSelected(int arg0) {
-		textviewList.get(currIndex).setBackgroundColor(android.graphics.Color.parseColor("#1E90FF"));
+		textviewList.get(currIndex).setBackgroundColor(android.graphics.Color.parseColor("#0360f9"));
 		textviewList.get(arg0).setBackgroundColor(android.graphics.Color.parseColor("#00BFFF"));
 		currIndex = arg0;
         try {

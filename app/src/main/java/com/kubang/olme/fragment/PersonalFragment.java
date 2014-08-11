@@ -1,6 +1,5 @@
 package com.kubang.olme.fragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,13 +13,11 @@ import android.widget.Toast;
 import com.kubang.olme.activity.OrderRecordActivity_;
 import com.kubang.olme.activity.PersonalInfoActivity_;
 import com.kubang.olme.activity.R;
-import com.kubang.olme.activity.ScoreActivity_;
+import com.kubang.olme.activity.ThemeActivity_;
 import com.kubang.olme.activity.ShoppingCartActivity_;
 import com.kubang.olme.application.CustomApplication;
 
-import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
-import org.androidannotations.annotations.ViewById;
 
 /**
  * Created by Bingo on 2014/8/4.
@@ -53,7 +50,7 @@ public class PersonalFragment extends Fragment {
 
         Button myshoppingcart = (Button)view.findViewById(R.id.myshoppingcar);
         Button orderrecord = (Button)view.findViewById(R.id.orderrecord);
-        Button myscore = (Button)view.findViewById(R.id.myscore);
+        Button myscore = (Button)view.findViewById(R.id.mytheme);
         Button personalInfo = (Button)view.findViewById(R.id.personalInfo);
 
 
@@ -89,7 +86,7 @@ public class PersonalFragment extends Fragment {
            public void onClick(View v) {
                app = (CustomApplication) getActivity().getApplication();
                if ("Login".equals(app.getValue())) {
-                   Intent intent = new Intent(getActivity(), ScoreActivity_.class);
+                   Intent intent = new Intent(getActivity(), ThemeActivity_.class);
                    startActivity(intent);
                } else {
                    toast.show();

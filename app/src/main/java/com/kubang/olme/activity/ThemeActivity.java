@@ -9,7 +9,7 @@ import org.androidannotations.annotations.EActivity;
 /**
  * Created by Bingo on 2014/8/9.
  */
-@EActivity(R.layout.activity_score)
-public class ScoreActivity extends Activity {
+@EActivity(R.layout.activity_theme)
+public class ThemeActivity extends Activity {
 //    ExitApplication.getInstance().addActivity(this);
 }

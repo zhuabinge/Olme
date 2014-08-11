@@ -1,7 +1,6 @@
 package com.kubang.olme.api;
 
 import com.kubang.olme.domain.LoginUser;
-import com.kubang.olme.domain.RegisterUser;
 
 import org.androidannotations.annotations.rest.Get;
 import org.androidannotations.annotations.rest.Rest;

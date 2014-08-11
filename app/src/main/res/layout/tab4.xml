@@ -32,7 +32,7 @@
         android:textColor="@color/white" />
 
     <Button
-        android:id="@+id/myscore"
+        android:id="@+id/mytheme"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -40,7 +40,7 @@
         android:gravity="left"
         android:paddingLeft="20dp"
         android:paddingTop="18dp"
-        android:text="我的积分"
+        android:text="我的主题"
         android:textColor="@color/white" />
 
     <Button
@@ -54,4 +54,5 @@
         android:paddingTop="18dp"
         android:text="个人资料"
         android:textColor="@color/white" />
+
 </LinearLayout>

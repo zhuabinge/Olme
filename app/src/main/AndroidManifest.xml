@@ -39,7 +39,7 @@
             android:name="com.kubang.olme.activity.OrderRecordActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity
-            android:name="com.kubang.olme.activity.ScoreActivity_"
+            android:name=".ThemeActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity
             android:name="com.kubang.olme.activity.PersonalInfoActivity_"

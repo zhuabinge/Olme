@@ -19,7 +19,7 @@ public class MyOnClickListener implements View.OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		textviewList.get(viewpager.getCurrentItem()).setBackgroundColor(android.graphics.Color.parseColor("#1E90FF"));
+		textviewList.get(viewpager.getCurrentItem()).setBackgroundColor(android.graphics.Color.parseColor("#0360f9"));
 		textviewList.get(index).setBackgroundColor(android.graphics.Color.parseColor("#00BFFF"));
 		viewpager.setCurrentItem(index);
 	}
