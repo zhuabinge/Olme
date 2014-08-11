@@ -67,7 +67,7 @@ public class RegisterActivity extends Activity {
         username = etUsername.getText().toString().trim();  //获取页面填的账号信息
         password = etPassword.getText().toString().trim();  //获取页面填的密码信息
         surepassword = etsPassword.getText().toString().trim();  //获取页面填的密码信息
-        if(!"".equals(username) && !"".equals(password) && !"".equals(surepassword)) {
+        if (!"".equals(username) && !"".equals(password) && !"".equals(surepassword)) {
             if (password.equals(surepassword)) {
                 register(username, password);
             } else {
@@ -76,8 +76,7 @@ public class RegisterActivity extends Activity {
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
             }
-        }
-        else{
+        } else {
             toast = Toast.makeText(RegisterActivity.this,
                     "不能为空，请重新输入！", Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
@@ -90,18 +89,24 @@ public class RegisterActivity extends Activity {
     void register(String username, String password) {
         try {
             Boolean flag = olmeApi.registers(username, password);
-            toast = Toast.makeText(RegisterActivity.this,
-                    "注册成功！3秒后自动跳转到登陆界面", Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.CENTER, 0, 0);
-            toast.show();
-            try {
-                Thread.currentThread().sleep(3000);
-                Intent intent = new Intent(RegisterActivity.this,LoginActivity_.class);
-                startActivity(intent);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            if (flag) {
+                toast = Toast.makeText(RegisterActivity.this,
+                        "注册成功！3秒后自动跳转到登陆界面", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+                try {
+                    Thread.currentThread().sleep(3000);
+                    Intent intent = new Intent(RegisterActivity.this, LoginActivity_.class);
+                    startActivity(intent);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                toast = Toast.makeText(RegisterActivity.this, "该邮箱已被注册，请选择其他邮箱！", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
             }
-        }catch (HttpStatusCodeException e) {
+        } catch (HttpStatusCodeException e) {
             showErroResult(e.getStatusCode().value());
         }
     }
