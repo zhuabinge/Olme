@@ -15,7 +15,7 @@ import com.kubang.olme.PopupWindow.MorePopWindow;
 import com.kubang.olme.api.OlmeApi;
 import com.kubang.olme.application.CustomApplication;
 import com.kubang.olme.application.ExitApplication;
-import com.kubang.olme.domain.TUser;
+import com.kubang.olme.domain.LoginUser;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Background;
@@ -84,35 +84,44 @@ public class LoginActivity extends Activity {
         }
     }
 
-//    @CheckedChange(R.id.checkboxpw)
-//    void cbpasswordIsChecked(){
-//        if (cbpassword.isChecked()) {
-//            sharedata.putBoolean("ISCHECK", true);
-//            sharedata.commit();
-//            //sp.edit().putBoolean("ISCHECK", true).commit();
-//        }else {
-//            System.out.println("记住密码没有选中");
-//            sharedata.putBoolean("ISCHECK", false);
-//            sharedata.commit();
-//        }
-//    }
+    @CheckedChange(R.id.checkboxpw)
+    void cbpasswordIsChecked(){
+        if (cbpassword.isChecked()) {
+            sharedata.putBoolean("ISCHECK", true);
+            sharedata.commit();
+            app.setValue("Login");
+            //sp.edit().putBoolean("ISCHECK", true).commit();
+        }else {
+            System.out.println("记住密码没有选中");
+            sharedata.putBoolean("ISCHECK", false);
+            sharedata.commit();
+            app.setValue("Logout");
+        }
+    }
 
-//    @CheckedChange(R.id.checkboxlg)
-//    void cbloginIsChecked(){
-//            if (cblogin.isChecked()) {
-//                sharedata.putBoolean("AUTO_ISCHECK", true);
-//                sharedata.commit();
-//            } else {
-//                sharedata.putBoolean("AUTO_ISCHECK", false);
-//                sharedata.commit();
-//            }
-//    }
+    @CheckedChange(R.id.checkboxlg)
+    void cbloginIsChecked(){
+            if (cblogin.isChecked()) {
+                sharedata.putBoolean("AUTO_ISCHECK", true);
+                sharedata.commit();
+            } else {
+                sharedata.putBoolean("AUTO_ISCHECK", false);
+                sharedata.commit();
+            }
+    }
 
     @Click(R.id.btn_login)
     void buttonIsClicked() {
         username = etUsername.getText().toString().trim();  //获取页面填的账号信息
         password = etPassword.getText().toString().trim();  //获取页面填的密码信息
-        login(username, password);
+        System.out.println("test" + username + "test");
+        System.out.println("test" + password + "test");
+        if(!"".equals(username)&&!"".equals(password)) {
+            login(username, password);
+        }
+        else{
+
+        }
     }
 
     @Click(R.id.btn_register)
@@ -136,7 +145,7 @@ public class LoginActivity extends Activity {
     @Background
     void login(String username, String password) {
         try {
-            TUser user = olmeApi.login(username, password); //验证登陆
+            LoginUser user = olmeApi.login(username, password); //验证登陆
             app.setValue("Login");
             System.out.println(user.toString());
             if (cbpassword.isChecked()) {  //记住用户名、密码、

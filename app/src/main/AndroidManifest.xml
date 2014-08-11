@@ -41,6 +41,9 @@
         <activity
             android:name="com.kubang.olme.activity.ScoreActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity
+            android:name="com.kubang.olme.activity.PersonalInfoActivity_"
+            android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
 
     </application>
 

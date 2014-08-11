@@ -4,15 +4,15 @@ package com.kubang.olme.domain;
  * Created by wuzeyong on 2014/7/31 0031.
  * Function:
  */
-public class TUser {
+public class LoginUser {
     private Integer id;
     private String username;
     private String password;
 
-    public TUser() {
+    public LoginUser() {
     }
 
-    public TUser(String password, String username) {
+    public LoginUser(String password, String username) {
         this.password = password;
         this.username = username;
     }

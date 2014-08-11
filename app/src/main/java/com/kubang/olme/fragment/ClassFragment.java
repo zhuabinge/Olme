@@ -7,12 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
 import com.kubang.olme.activity.LoginActivity_;
 import com.kubang.olme.activity.R;
+
 
 /**
  * Created by Bingo on 2014/8/4.
  */
+
 public class ClassFragment extends Fragment {
     private Button button;
 

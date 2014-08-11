@@ -31,4 +31,10 @@ public class MyFragmentadapter extends FragmentPagerAdapter {
         // TODO Auto-generated method stub
         return list.size();
     }
+
+//    @Override
+//    public void setPrimaryItem(ViewGroup container, int position, Object object) {
+//        super.setPrimaryItem(container, position, object);
+//        list.get(position).
+//    }
 }

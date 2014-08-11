@@ -1,10 +1,8 @@
 package com.kubang.olme.PopupWindow;
 
 import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +13,13 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.SimpleAdapter;
 
+import com.kubang.olme.activity.LoginActivity_;
 import com.kubang.olme.activity.R;
-import com.kubang.olme.application.ExitApplication;
-import com.kubang.olme.dataSource.popupDataSource;
+import com.kubang.olme.application.CustomApplication;
+import com.kubang.olme.dataSource.popupDataSource_1;
+
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Bingo on 2014/8/4.
@@ -26,25 +28,45 @@ public class MorePopWindow extends PopupWindow {
     private View conentView;
     private Button btn_cancel;
     private SimpleAdapter adapter;
-    popupDataSource data;
+    popupDataSource_1 data;
+    private CustomApplication app;
 
-    public MorePopWindow(final Activity context,final View views) {
+    public MorePopWindow(final Activity context, final View views) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         conentView = inflater.inflate(R.layout.more_popup_dialog1, null);
         ListView listView1 = (ListView) conentView.findViewById(R.id.popupListview);
-        adapter = new SimpleAdapter(context,data.getData() , R.layout.popup_item1,
-                new String[] { "popupimage", "popuptext" },
-                new int[] { R.id.popupimage, R.id.popuptext});
+        List<HashMap<String, Object>> map;
+        app = (CustomApplication) context.getApplication();
+        System.out.println("-----> more  " + app.getValue());
+        if ("Login".equals(app.getValue())) {
+            map = data.getData_1();
+        } else {
+            map = data.getData_2();
+        }
+        adapter = new SimpleAdapter(context, map, R.layout.popup_item1,
+                new String[]{"popupimage", "popuptext"},
+                new int[]{R.id.popupimage, R.id.popuptext});
         listView1.setAdapter(adapter);
-        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position){
-                    case 0:break;
-                    case 1:break;
-                    case 2:dismiss();new LogoutPopWindow(context,views);break;
-                    default:break;
+                switch (position) {
+                    case 0:
+                        if (!"Login".equals(app.getValue())) {
+                            dismiss();
+                            Intent intent = new Intent(context, LoginActivity_.class);
+                            context.startActivity(intent);
+                        }
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        dismiss();
+                        new LogoutPopWindow(context, views);
+                        break;
+                    default:
+                        break;
                 }
 
             }
@@ -82,25 +104,25 @@ public class MorePopWindow extends PopupWindow {
         }
     }
 
-    public void showTips(Activity context){
-        AlertDialog alertDialog = new AlertDialog.Builder(context).setTitle("提醒")
-                .setMessage("是否退出程序")
-                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-//                        final  ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-//                        am.restartPackage(getPackageName());
-//                        android.os.Process.killProcess(android.os.Process.myPid());
-                        ExitApplication.getInstance().exit();
-                    }
-
-                }).setNegativeButton("取消",
-
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                return;
-                            }
-                        }
-                ).create(); // 创建对话框
-        alertDialog.show(); // 显示对话框
-    }
+//    public void showTips(Activity context){
+//        AlertDialog alertDialog = new AlertDialog.Builder(context).setTitle("提醒")
+//                .setMessage("是否退出程序")
+//                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+////                        final  ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+////                        am.restartPackage(getPackageName());
+////                        android.os.Process.killProcess(android.os.Process.myPid());
+//                        ExitApplication.getInstance().exit();
+//                    }
+//
+//                }).setNegativeButton("取消",
+//
+//                        new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                return;
+//                            }
+//                        }
+//                ).create(); // 创建对话框
+//        alertDialog.show(); // 显示对话框
+//    }
 }

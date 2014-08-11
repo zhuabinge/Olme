@@ -2,41 +2,56 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical"
     android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:background="@drawable/background">
+    android:paddingRight="10dp">
+
     <Button
         android:id="@+id/myshoppingcar"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
+        android:background="@drawable/background_bule_forward"
+        android:gravity="left"
         android:paddingLeft="20dp"
         android:paddingTop="18dp"
-        android:gravity="left"
         android:text="我的购物车"
-        android:textColor="@color/white"
-        android:background="@drawable/background_bule_forward"/>
+        android:textColor="@color/white" />
+
     <Button
         android:id="@+id/orderrecord"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
+        android:background="@drawable/background_bule_forward"
+        android:gravity="left"
         android:paddingLeft="20dp"
         android:paddingTop="18dp"
-        android:gravity="left"
         android:text="订单记录"
-        android:textColor="@color/white"
-        android:background="@drawable/background_bule_forward"/>
+        android:textColor="@color/white" />
+
     <Button
         android:id="@+id/myscore"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
+        android:background="@drawable/background_bule_forward"
+        android:gravity="left"
         android:paddingLeft="20dp"
         android:paddingTop="18dp"
-        android:gravity="left"
         android:text="我的积分"
-        android:textColor="@color/white"
-        android:background="@drawable/background_bule_forward"/>
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/personalInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_bule_forward"
+        android:gravity="left"
+        android:paddingLeft="20dp"
+        android:paddingTop="18dp"
+        android:text="个人资料"
+        android:textColor="@color/white" />
 </LinearLayout>

@@ -1,9 +1,9 @@
 package com.kubang.olme.api;
 
-import com.kubang.olme.domain.TUser;
+import com.kubang.olme.domain.LoginUser;
+import com.kubang.olme.domain.RegisterUser;
 
 import org.androidannotations.annotations.rest.Get;
-import org.androidannotations.annotations.rest.Post;
 import org.androidannotations.annotations.rest.Rest;
 import org.springframework.http.converter.json.GsonHttpMessageConverter;
 
@@ -14,8 +14,12 @@ import org.springframework.http.converter.json.GsonHttpMessageConverter;
 @Rest(rootUrl="http://10.0.2.2:8080/olme/",converters = GsonHttpMessageConverter.class)
 public interface OlmeApi {
 
+    @Get("user/{username}/{password}")
+    LoginUser login(String username,String password);
 
 
     @Get("user/{username}/{password}")
-    TUser login(String username,String password);
+    Boolean registers(String username,String password);
+
+
 }
