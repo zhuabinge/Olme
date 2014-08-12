@@ -24,27 +24,36 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.kubang.olme.activity.ItemInfoActivity_"
+            android:name=".ItemInfoActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity
-            android:name="com.kubang.olme.activity.LoginActivity_"
+            android:name=".LoginActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity
-            android:name="com.kubang.olme.activity.RegisterActivity_"
+            android:name=".RegisterActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity
-            android:name="com.kubang.olme.activity.ShoppingCartActivity_"
+            android:name=".OrderRecordActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity
-            android:name="com.kubang.olme.activity.OrderRecordActivity_"
+            android:name=".MyThemeActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity
-            android:name=".ThemeActivity_"
+            android:name=".CollectionActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity
-            android:name="com.kubang.olme.activity.PersonalInfoActivity_"
+            android:name=".PersonalInfoActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
 
+        <activity
+            android:name=".OrderDetailActivity_"
+            android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity
+            android:name=".AddThemeActivity_"
+            android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity
+            android:name=".LogoutActivity_"
+            android:theme="@style/Transparent"></activity>
     </application>
 
 </manifest>

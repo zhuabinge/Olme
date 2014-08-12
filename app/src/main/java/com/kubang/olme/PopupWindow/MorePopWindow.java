@@ -14,6 +14,7 @@ import android.widget.PopupWindow;
 import android.widget.SimpleAdapter;
 
 import com.kubang.olme.activity.LoginActivity_;
+import com.kubang.olme.activity.LogoutActivity_;
 import com.kubang.olme.activity.R;
 import com.kubang.olme.application.CustomApplication;
 import com.kubang.olme.dataSource.popupDataSource_1;
@@ -63,7 +64,9 @@ public class MorePopWindow extends PopupWindow {
                         break;
                     case 2:
                         dismiss();
-                        new LogoutPopWindow(context, views);
+                        Intent intent = new Intent(context, LogoutActivity_.class);
+                        context.startActivity(intent);
+                        //new LogoutPopWindow(context, views);
                         break;
                     default:
                         break;

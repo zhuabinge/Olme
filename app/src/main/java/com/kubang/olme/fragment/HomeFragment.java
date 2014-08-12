@@ -27,6 +27,7 @@ public class HomeFragment extends Fragment{
     public void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+        //getActivity().setFinishOnTouchOutside(true);
     }
 
     @Override

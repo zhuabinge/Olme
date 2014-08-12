@@ -8,13 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.kubang.olme.activity.CollectionActivity_;
+import com.kubang.olme.activity.MyThemeActivity_;
 import com.kubang.olme.activity.OrderRecordActivity_;
 import com.kubang.olme.activity.PersonalInfoActivity_;
 import com.kubang.olme.activity.R;
-import com.kubang.olme.activity.ThemeActivity_;
-import com.kubang.olme.activity.ShoppingCartActivity_;
 import com.kubang.olme.application.CustomApplication;
 
 import org.androidannotations.annotations.EFragment;
@@ -48,25 +49,10 @@ public class PersonalFragment extends Fragment {
                 "请先登陆！", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER, 0, 0);
 
-        Button myshoppingcart = (Button)view.findViewById(R.id.myshoppingcar);
-        Button orderrecord = (Button)view.findViewById(R.id.orderrecord);
-        Button myscore = (Button)view.findViewById(R.id.mytheme);
-        Button personalInfo = (Button)view.findViewById(R.id.personalInfo);
-
-
-        myshoppingcart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                app = (CustomApplication) getActivity().getApplication();
-                if ("Login".equals(app.getValue())) {
-                    Intent intent = new Intent(getActivity(), ShoppingCartActivity_.class);
-                    startActivity(intent);
-                } else {
-                    toast.show();
-                }
-            }
-        });
-
+        LinearLayout orderrecord = (LinearLayout)view.findViewById(R.id.orderrecord);
+        LinearLayout mytheme = (LinearLayout)view.findViewById(R.id.myquestion);
+        LinearLayout mycollection = (LinearLayout)view.findViewById(R.id.mycollection);
+        LinearLayout personalInfo = (LinearLayout)view.findViewById(R.id.personalInfo);
 
        orderrecord.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -81,18 +67,31 @@ public class PersonalFragment extends Fragment {
            }
        });
 
-       myscore.setOnClickListener(new View.OnClickListener() {
+        mytheme.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                app = (CustomApplication) getActivity().getApplication();
                if ("Login".equals(app.getValue())) {
-                   Intent intent = new Intent(getActivity(), ThemeActivity_.class);
+                   Intent intent = new Intent(getActivity(), MyThemeActivity_.class);
                    startActivity(intent);
                } else {
                    toast.show();
                }
            }
        });
+
+        mycollection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                app = (CustomApplication) getActivity().getApplication();
+                if ("Login".equals(app.getValue())) {
+                    Intent intent = new Intent(getActivity(), CollectionActivity_.class);
+                    startActivity(intent);
+                } else {
+                    toast.show();
+                }
+            }
+        });
 
         personalInfo.setOnClickListener(new View.OnClickListener() {
             @Override

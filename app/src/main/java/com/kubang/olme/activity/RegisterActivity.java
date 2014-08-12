@@ -40,7 +40,7 @@ public class RegisterActivity extends Activity {
     EditText etsPassword;
 
     @ViewById(R.id.morebt)
-    Button morebt;
+    ImageView morebt;
 
     @RestService
     OlmeApi olmeApi;

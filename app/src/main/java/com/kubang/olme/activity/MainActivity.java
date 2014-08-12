@@ -24,7 +24,6 @@ import com.kubang.olme.fragment.ClassFragment;
 import com.kubang.olme.fragment.DiscussFragment;
 import com.kubang.olme.fragment.HomeFragment;
 import com.kubang.olme.fragment.PersonalFragment;
-import com.kubang.olme.fragment.RecommendFragment;
 import com.kubang.olme.onClickListener.MyOnClickListener;
 import com.kubang.olme.onPageChangeListener.MyOnPageChangeListener;
 
@@ -56,9 +55,6 @@ public class MainActivity extends FragmentActivity {
 
     @ViewById(R.id.personalpage)
     TextView personal;
-
-    @ViewById(R.id.recommendpage)
-    TextView recommend;
 
     @ViewById(R.id.et_username)
     EditText etUsername;
@@ -111,13 +107,11 @@ public class MainActivity extends FragmentActivity {
         textviewList.add(classes);
         textviewList.add(discuss);
         textviewList.add(personal);
-        textviewList.add(recommend);
         head.setBackgroundColor(android.graphics.Color.parseColor("#00BFFF")); //设置起始背景色
         head.setOnClickListener(new MyOnClickListener(viewpager, textviewList, 0));   //监听TextView的点击事件
         classes.setOnClickListener(new MyOnClickListener(viewpager, textviewList, 1));
         discuss.setOnClickListener(new MyOnClickListener(viewpager, textviewList, 2));
         personal.setOnClickListener(new MyOnClickListener(viewpager, textviewList, 3));
-        recommend.setOnClickListener(new MyOnClickListener(viewpager, textviewList, 4));
     }
 
     public void initViewPager() {
@@ -127,7 +121,6 @@ public class MainActivity extends FragmentActivity {
         list.add(new ClassFragment());
         list.add(new DiscussFragment());
         list.add(new PersonalFragment());
-        list.add(new RecommendFragment());
         // transaction = manager.beginTransaction();
         adapters = new MyFragmentadapter(manager, list);
         viewpager.setAdapter(adapters);

@@ -21,9 +21,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="订单编号："
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
-
 
             <TextView
                 android:id="@+id/orderId"
@@ -37,23 +36,27 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="3dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="课程名称：" />
+            android:text="课程名称："
+            android:textSize="15dp"/>
 
         <TextView
-            android:id="@+id/orderName"
+            android:id="@+id/courseName"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="15dp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="3dp">
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -64,12 +67,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="价格:￥" />
+                android:text="价格:￥"
+                android:textSize="15dp"/>
 
             <TextView
-                android:id="@+id/orderTeacher"
+                android:id="@+id/coursePrice"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textSize="15dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -81,12 +86,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="购买时间：" />
+                android:text="购买日期："
+                android:textSize="15dp"/>
 
             <TextView
-                android:id="@+id/orderTime"
+                android:id="@+id/orderDate"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textSize="15dp"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
