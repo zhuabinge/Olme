@@ -1,6 +1,7 @@
 package com.kubang.olme.domain;
 
 import java.sql.Date;
+import java.util.List;
 
 /**
  * Created by Bingo on 2014/8/11.
@@ -15,7 +16,8 @@ public class OrederRecord {
     private String courseDescription;
     private String coursePhoto;
     private String teacherName;
-    private int vedioTotalLength;
+    private int courseTotalLength;
+    private int consumeScore;
     private float coursePrice;
     private float actualPrice;
 
@@ -23,8 +25,7 @@ public class OrederRecord {
         super();
     }
 
-
-    public OrederRecord(int userId, int orderId, int courseId, int teacherId, Date orderDate, String courseName, String courseDescription, String coursePhoto, String teacherName, int vedioTotalLength, float coursePrice, float actualPrice) {
+    public OrederRecord(int userId, int orderId, int courseId, int teacherId, Date orderDate, String courseName, String courseDescription, String coursePhoto, String teacherName, int courseTotalLength, int consumeScore, float coursePrice, float actualPrice) {
         this.userId = userId;
         this.orderId = orderId;
         this.courseId = courseId;
@@ -34,7 +35,8 @@ public class OrederRecord {
         this.courseDescription = courseDescription;
         this.coursePhoto = coursePhoto;
         this.teacherName = teacherName;
-        this.vedioTotalLength = vedioTotalLength;
+        this.courseTotalLength = courseTotalLength;
+        this.consumeScore = consumeScore;
         this.coursePrice = coursePrice;
         this.actualPrice = actualPrice;
     }
@@ -112,11 +114,19 @@ public class OrederRecord {
     }
 
     public int getVedioTotalLength() {
-        return vedioTotalLength;
+        return courseTotalLength;
     }
 
-    public void setVedioTotalLength(int vedioTotalLength) {
-        this.vedioTotalLength = vedioTotalLength;
+    public void setVedioTotalLength(int courseTotalLength) {
+        this.courseTotalLength = courseTotalLength;
+    }
+
+    public int getConsumeScore() {
+        return consumeScore;
+    }
+
+    public void setConsumeScore(int consumeScore) {
+        this.consumeScore = consumeScore;
     }
 
     public float getCoursePrice() {
@@ -133,6 +143,18 @@ public class OrederRecord {
 
     public void setActualPrice(float actualPrice) {
         this.actualPrice = actualPrice;
+    }
+
+    public class OrderRecordList{
+        private List<OrederRecord> orederRecordList;
+
+        public List<OrederRecord> getOrederRecordList() {
+            return orederRecordList;
+        }
+
+        public void setOrederRecordList(List<OrederRecord> orederRecordList) {
+            this.orederRecordList = orederRecordList;
+        }
     }
 
 }
