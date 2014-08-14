@@ -71,7 +71,7 @@ public class LoginActivity extends Activity {
         sharedata = getSharedPreferences("userInfo", 0).edit();
         inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         views = inflater.inflate(    //获取自定义布局文件dialog.xml的视图
-                R.layout.activity_main, null, false);
+                R.layout.activity_login, null, false);
         initEditView();
     }
 

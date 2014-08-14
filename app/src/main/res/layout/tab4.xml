@@ -57,7 +57,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
+         <LinearLayout
             android:id="@+id/myquestion"
             android:layout_width="fill_parent"
             android:layout_height="50dp"
