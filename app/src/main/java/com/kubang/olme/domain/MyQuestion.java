@@ -65,15 +65,15 @@ public class MyQuestion {
         this.comStartTime = comStartTime;
     }
 
-    public class MyQuestionList{
-        private List<MyQuestion> myQuestionList;
-
-        public List<MyQuestion> getMyQuestionList() {
-            return myQuestionList;
-        }
-
-        public void setMyQuestionList(List<MyQuestion> myQuestionList) {
-            this.myQuestionList = myQuestionList;
-        }
-    }
+//    public class MyQuestionList{
+//        private List<MyQuestion> myQuestionList;
+//
+//        public List<MyQuestion> getMyQuestionList() {
+//            return myQuestionList;
+//        }
+//
+//        public void setMyQuestionList(List<MyQuestion> myQuestionList) {
+//            this.myQuestionList = myQuestionList;
+//        }
+//    }
 }

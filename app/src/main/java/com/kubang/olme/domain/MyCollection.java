@@ -65,15 +65,15 @@ public class MyCollection {
     }
 
 
-    public class MyCollectionList{
-        private List<MyCollection> myCollection;
-
-        public List<MyCollection> getMyCollection() {
-            return myCollection;
-        }
-
-        public void setMyCollection(List<MyCollection> myCollection) {
-            this.myCollection = myCollection;
-        }
-    }
+//    public class MyCollectionList{
+//        private List<MyCollection> myCollection;
+//
+//        public List<MyCollection> getMyCollection() {
+//            return myCollection;
+//        }
+//
+//        public void setMyCollection(List<MyCollection> myCollection) {
+//            this.myCollection = myCollection;
+//        }
+//    }
 }

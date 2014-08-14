@@ -16,6 +16,21 @@ public class AllQuestion {
     private Date comStartTime;
     private int answerCount;
 
+    public AllQuestion() {
+        super();
+    }
+
+    public AllQuestion(int userId, int comId, String userName, String userPhoto, String commTheme, String comContent, Date comStartTime, int answerCount) {
+        this.userId = userId;
+        this.comId = comId;
+        this.userName = userName;
+        this.userPhoto = userPhoto;
+        this.commTheme = commTheme;
+        this.comContent = comContent;
+        this.comStartTime = comStartTime;
+        this.answerCount = answerCount;
+    }
+
     public int getUserId() {
         return userId;
     }
@@ -80,16 +95,16 @@ public class AllQuestion {
         this.answerCount = answerCount;
     }
 
-    private class AllQuestionList{
-        private List<AllQuestion> allQuestionList;
-
-        public List<AllQuestion> getAllQuestionList() {
-            return allQuestionList;
-        }
-
-        public void setAllQuestionList(List<AllQuestion> allQuestionList) {
-            this.allQuestionList = allQuestionList;
-        }
-    }
+//    private class AllQuestionList{
+//        private List<AllQuestion> allQuestionList;
+//
+//        public List<AllQuestion> getAllQuestionList() {
+//            return allQuestionList;
+//        }
+//
+//        public void setAllQuestionList(List<AllQuestion> allQuestionList) {
+//            this.allQuestionList = allQuestionList;
+//        }
+//    }
 
 }

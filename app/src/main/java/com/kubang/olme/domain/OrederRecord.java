@@ -145,16 +145,16 @@ public class OrederRecord {
         this.actualPrice = actualPrice;
     }
 
-    public class OrderRecordList{
-        private List<OrederRecord> orederRecordList;
-
-        public List<OrederRecord> getOrederRecordList() {
-            return orederRecordList;
-        }
-
-        public void setOrederRecordList(List<OrederRecord> orederRecordList) {
-            this.orederRecordList = orederRecordList;
-        }
-    }
+//    public class OrderRecordList{
+//        private List<OrederRecord> orederRecordList;
+//
+//        public List<OrederRecord> getOrederRecordList() {
+//            return orederRecordList;
+//        }
+//
+//        public void setOrederRecordList(List<OrederRecord> orederRecordList) {
+//            this.orederRecordList = orederRecordList;
+//        }
+//    }
 
 }

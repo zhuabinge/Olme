@@ -95,17 +95,17 @@ public class CourseInfo {
         this.price = price;
     }
 
-    public class CourseInfoList{
-        private List<CourseType> courseTypeList;
-
-        public List<CourseType> getCourseTypeList() {
-            return courseTypeList;
-        }
-
-        public void setCourseTypeList(List<CourseType> courseTypeList) {
-            this.courseTypeList = courseTypeList;
-        }
-    }
+//    public class CourseInfoList{
+//        private List<CourseType> courseTypeList;
+//
+//        public List<CourseType> getCourseTypeList() {
+//            return courseTypeList;
+//        }
+//
+//        public void setCourseTypeList(List<CourseType> courseTypeList) {
+//            this.courseTypeList = courseTypeList;
+//        }
+//    }
 
 }
 

@@ -44,15 +44,15 @@ public class QuestionPhoto {
         this.photoLocation = photoLocation;
     }
 
-    public class QuestionPhotoList{
-        private List<QuestionPhoto> questionPhotoList;
-
-        public List<QuestionPhoto> getQuestionPhotoList() {
-            return questionPhotoList;
-        }
-
-        public void setQuestionPhotoList(List<QuestionPhoto> questionPhotoList) {
-            this.questionPhotoList = questionPhotoList;
-        }
-    }
+//    public class QuestionPhotoList{
+//        private List<QuestionPhoto> questionPhotoList;
+//
+//        public List<QuestionPhoto> getQuestionPhotoList() {
+//            return questionPhotoList;
+//        }
+//
+//        public void setQuestionPhotoList(List<QuestionPhoto> questionPhotoList) {
+//            this.questionPhotoList = questionPhotoList;
+//        }
+//    }
 }

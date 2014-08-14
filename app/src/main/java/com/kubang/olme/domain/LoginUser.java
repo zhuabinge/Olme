@@ -16,11 +16,12 @@ public class LoginUser {
     private String userAddress;
     private Date userBirthday;
     private String userPhone;
+    private String userSex;
 
     public LoginUser() {
     }
 
-    public LoginUser(int userId, String userEmail, String userName, String password, int userScore, String userPhoto, String userAddress, Date userBirthday, String userPhone) {
+    public LoginUser(int userId, String userEmail, String userName, String password, int userScore, String userPhoto, String userAddress, Date userBirthday, String userPhone, String userSex) {
         this.userId = userId;
         this.userEmail = userEmail;
         this.userName = userName;
@@ -30,6 +31,7 @@ public class LoginUser {
         this.userAddress = userAddress;
         this.userBirthday = userBirthday;
         this.userPhone = userPhone;
+        this.userSex = userSex;
     }
 
     public int getUserId() {
@@ -102,5 +104,13 @@ public class LoginUser {
 
     public void setUserPhone(String userPhone) {
         this.userPhone = userPhone;
+    }
+
+    public String getUserSex() {
+        return userSex;
+    }
+
+    public void setUserSex(String userSex) {
+        this.userSex = userSex;
     }
 }

@@ -84,15 +84,15 @@ public class CourseType {
         this.totalVedioCount = totalVedioCount;
     }
 
-    public class CourseTypeList{
-        private List<CourseType> courseTypeList;
-
-        public List<CourseType> getCourseTypeList() {
-            return courseTypeList;
-        }
-
-        public void setCourseTypeList(List<CourseType> courseTypeList) {
-            this.courseTypeList = courseTypeList;
-        }
-    }
+//    public class CourseTypeList{
+//        private List<CourseType> courseTypeList;
+//
+//        public List<CourseType> getCourseTypeList() {
+//            return courseTypeList;
+//        }
+//
+//        public void setCourseTypeList(List<CourseType> courseTypeList) {
+//            this.courseTypeList = courseTypeList;
+//        }
+//    }
 }

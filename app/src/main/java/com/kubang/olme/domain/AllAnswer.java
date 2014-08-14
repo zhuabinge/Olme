@@ -85,15 +85,15 @@ public class AllAnswer {
         this.userPhoto = userPhoto;
     }
 
-    public class AllAnswerList{
-        private List<AllAnswer> allAnswerList;
-
-        public List<AllAnswer> getAllAnswerList() {
-            return allAnswerList;
-        }
-
-        public void setAllAnswerList(List<AllAnswer> allAnswerList) {
-            this.allAnswerList = allAnswerList;
-        }
-    }
+//    public class AllAnswerList{
+//        private List<AllAnswer> allAnswerList;
+//
+//        public List<AllAnswer> getAllAnswerList() {
+//            return allAnswerList;
+//        }
+//
+//        public void setAllAnswerList(List<AllAnswer> allAnswerList) {
+//            this.allAnswerList = allAnswerList;
+//        }
+//    }
 }
