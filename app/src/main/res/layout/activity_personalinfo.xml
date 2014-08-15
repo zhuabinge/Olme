@@ -35,12 +35,13 @@
             android:paddingTop="6dp" >
 
             <LinearLayout
-                android:id="@+id/headPhoto"
+                android:id="@+id/myHeadPhoto"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingBottom="10dp"
-                android:clickable="true">
+                android:clickable="true"
+                android:background="@drawable/gray_backgroud">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -80,7 +81,8 @@
                 android:orientation="horizontal"
                 android:paddingBottom="13dp"
                 android:paddingTop="13dp"
-                android:clickable="true">
+                android:clickable="true"
+                android:background="@drawable/gray_backgroud">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -122,7 +124,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingBottom="13dp"
-                android:paddingTop="13dp">
+                android:paddingTop="13dp"
+                android:background="@drawable/gray_backgroud">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -165,7 +168,8 @@
                 android:orientation="horizontal"
                 android:paddingBottom="13dp"
                 android:paddingTop="13dp"
-                android:clickable="true">
+                android:clickable="true"
+                android:background="@drawable/gray_backgroud">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -207,7 +211,8 @@
                 android:orientation="horizontal"
                 android:paddingBottom="13dp"
                 android:paddingTop="13dp"
-                android:clickable="true">
+                android:clickable="true"
+                android:background="@drawable/gray_backgroud">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -249,7 +254,8 @@
                 android:orientation="horizontal"
                 android:paddingBottom="13dp"
                 android:paddingTop="13dp"
-                android:clickable="true">
+                android:clickable="true"
+                android:background="@drawable/gray_backgroud">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -291,7 +297,8 @@
                 android:orientation="horizontal"
                 android:paddingBottom="13dp"
                 android:paddingTop="13dp"
-                android:clickable="true">
+                android:clickable="true"
+                android:background="@drawable/gray_backgroud">
 
                 <LinearLayout
                     android:layout_width="fill_parent"

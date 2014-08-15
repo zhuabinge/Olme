@@ -79,8 +79,8 @@ public class LoginActivity extends Activity {
     public void initEditView(){
         SharedPreferences sp = sp = this.getSharedPreferences("userInfo", 0);
         if(sp.getBoolean("ISCHECK",false)){
-            etUsername.setText(sp.getString("USER_NAME",""));
-            etPassword.setText(sp.getString("PASSWORD",""));
+            etUsername.setText(sp.getString("userEmail",""));
+            etPassword.setText(sp.getString("password",""));
         }
     }
 
@@ -149,8 +149,8 @@ public class LoginActivity extends Activity {
             app.setValue("Login");
             System.out.println(user.toString());
             if (cbpassword.isChecked()) {  //记住用户名、密码、
-                sharedata.putString("USER_NAME", username);
-                sharedata.putString("PASSWORD", password);
+                sharedata.putString("userEmail", username);
+                sharedata.putString("password", password);
                 sharedata.putBoolean("ISCHECK", true);
                 if (cblogin.isChecked()) {  //自动登陆
                     sharedata.putBoolean("AUTO_ISCHECK", true);

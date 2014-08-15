@@ -1,21 +1,15 @@
 package com.kubang.olme.activity;
 
 import android.app.Activity;
-import android.content.res.Configuration;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
+import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
-import android.view.InputQueue;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.SurfaceHolder;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
+import com.kubang.olme.activity.R;
 import com.kubang.olme.application.ExitApplication;
 
 import org.androidannotations.annotations.AfterViews;
@@ -26,6 +20,46 @@ import org.androidannotations.annotations.ViewById;
 /**
  * Created by Bingo on 2014/8/13.
  */
+
+//public class LogoutDialog extends Dialog {
+//
+//    private Context context;
+//
+//    public LogoutDialog(Context context) {
+//        super(context);
+//        this.context = context;
+//    }
+//
+//    public LogoutDialog(Context context, int theme) {
+//        super(context, theme);
+//        this.context = context;
+//    }
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        this.setContentView(R.layout.activity_logout_dialog);
+//        LinearLayout closeApp = (LinearLayout) this.findViewById(R.id.closeApp);
+//        LinearLayout logoff = (LinearLayout) this.findViewById(R.id.logoff);
+//
+//        closeApp.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                ExitApplication.getInstance().exit();
+//            }
+//        });
+//
+//        logoff.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                System.out.println("注销");
+//            }
+//        });
+//
+//        this.setCanceledOnTouchOutside(true);
+//    }
+//}
+
 @EActivity(R.layout.activity_logout_dialog)
 public class LogoutActivity extends Activity {
     @ViewById(R.id.closeApp)

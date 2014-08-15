@@ -66,6 +66,8 @@ public class MorePopWindow extends PopupWindow {
                         dismiss();
                         Intent intent = new Intent(context, LogoutActivity_.class);
                         context.startActivity(intent);
+//                        LogoutDialog logoutDialog = new LogoutDialog(context,R.style.MyDialog);
+//                        logoutDialog.show();
                         //new LogoutPopWindow(context, views);
                         break;
                     default:
