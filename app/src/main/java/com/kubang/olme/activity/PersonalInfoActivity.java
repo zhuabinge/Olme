@@ -117,13 +117,13 @@ public class PersonalInfoActivity extends Activity {
     }
 
 
-    @Click(R.id.returnbt)
+    @Click(R.id.returnbt)    //返回前个页面
     void returnbtIsClicked() {
         headTitle.setText("");
         PersonalInfoActivity.this.finish();  //结束本Activity
     }
 
-    @Click(R.id.morebt)
+    @Click(R.id.morebt)   //显示下拉菜单
     void morebtIsClicked() {
         MorePopWindow morePopWindow = new MorePopWindow(PersonalInfoActivity.this, views);
         morePopWindow.showPopupWindow(morebt);  //显示more窗口
