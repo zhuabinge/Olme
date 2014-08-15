@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * Created by Bingo on 2014/8/15.
+ * 异步实现listview下拉更新
  */
 public class OrderGetDataTask extends AsyncTask<Void, Void, HashMap<String, Object>> {
     private LinkedList<HashMap<String, Object>> list;

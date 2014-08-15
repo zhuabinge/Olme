@@ -14,7 +14,7 @@ import com.kubang.olme.activity.R;
 import com.kubang.olme.application.CustomApplication;
 
 /**
- * 页卡切换监听
+ * 页卡滑动切换监听
  */
 public class MyOnPageChangeListener implements OnPageChangeListener {
 	private int currIndex = 0;// 当前页卡编号

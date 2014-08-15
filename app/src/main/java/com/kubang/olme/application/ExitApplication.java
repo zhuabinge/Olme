@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Created by Bingo on 2014/8/10.
+ * 完全退出应用程序
  */
 public class ExitApplication extends Application {
     private List<Activity> activitys = null;

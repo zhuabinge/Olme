@@ -14,9 +14,10 @@ import com.kubang.olme.activity.R;
 
 /**
  * Created by Bingo on 2014/8/4.
+ * app底部菜单的课程
  */
 
-public class ClassFragment extends Fragment {
+public class CourseFragment extends Fragment {
     private Button button;
 
     @Override

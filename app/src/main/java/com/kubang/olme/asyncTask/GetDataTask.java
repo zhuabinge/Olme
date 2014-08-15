@@ -9,6 +9,7 @@ import java.util.LinkedList;
 
 /**
  * Created by Bingo on 2014/8/10.
+ * 异步实现listView下拉更新
  */
 public class GetDataTask extends AsyncTask<Void, Void, String> {
     private LinkedList<String> mListItems;

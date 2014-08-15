@@ -11,6 +11,10 @@ import android.view.Choreographer;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * 碎片适配器，viewpager在使用
+ */
+
 public class MyFragmentadapter extends FragmentPagerAdapter {
     private FragmentManager fm;
     private List<Fragment> list;

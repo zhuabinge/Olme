@@ -25,6 +25,7 @@ import java.util.Objects;
 
 /**
  * Created by Bingo on 2014/8/3.
+ *（测试）获取HomeFragment在listview的item信息
  */
 @EActivity(R.layout.activity_homeiteminfo)
 public class ItemInfoActivity extends Activity{

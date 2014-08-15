@@ -6,6 +6,10 @@ import java.util.List;
 import com.kubang.olme.activity.R;
 import org.androidannotations.annotations.EBean;
 
+/**
+ * （测试）作为listview中item的数据源
+ */
+
 @EBean
 public class DataSource {
 	public static List<HashMap<String,Object>> getDataSource(){

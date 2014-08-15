@@ -19,6 +19,7 @@ import org.androidannotations.annotations.ViewById;
 
 /**
  * Created by Bingo on 2014/8/13.
+ * 退出界面
  */
 
 //public class LogoutDialog extends Dialog {

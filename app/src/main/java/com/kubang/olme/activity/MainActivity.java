@@ -20,8 +20,8 @@ import com.kubang.olme.PopupWindow.MorePopWindow;
 import com.kubang.olme.adapter.MyFragmentadapter;
 import com.kubang.olme.application.CustomApplication;
 import com.kubang.olme.application.ExitApplication;
-import com.kubang.olme.fragment.ClassFragment;
-import com.kubang.olme.fragment.DiscussFragment;
+import com.kubang.olme.fragment.CommunicationFragment;
+import com.kubang.olme.fragment.CourseFragment;
 import com.kubang.olme.fragment.HomeFragment;
 import com.kubang.olme.fragment.PersonalFragment;
 import com.kubang.olme.onClickListener.MyOnClickListener;
@@ -32,6 +32,10 @@ import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
+
+/**
+ * Created by Bingo on 2014/8/1
+ */
 @EActivity(R.layout.activity_main)
 public class MainActivity extends FragmentActivity {
 
@@ -118,8 +122,8 @@ public class MainActivity extends FragmentActivity {
         manager = getSupportFragmentManager();
         list = new ArrayList<Fragment>();
         list.add(new HomeFragment());
-        list.add(new ClassFragment());
-        list.add(new DiscussFragment());
+        list.add(new CourseFragment());
+        list.add(new CommunicationFragment());
         list.add(new PersonalFragment());
         // transaction = manager.beginTransaction();
         adapters = new MyFragmentadapter(manager, list);

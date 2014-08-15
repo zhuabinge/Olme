@@ -6,6 +6,10 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.TextView;
 
+/**
+ * 监听app底部菜单的点击事件
+ */
+
 public class MyOnClickListener implements View.OnClickListener {
 	private int index = 0;
 	private ViewPager viewpager;

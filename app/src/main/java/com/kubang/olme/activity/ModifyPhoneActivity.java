@@ -11,6 +11,7 @@ import org.androidannotations.annotations.EActivity;
 
 /**
  * Created by Bingo on 2014/8/15.
+ * 修改我的电话
  */
 @EActivity(R.layout.activity_modifyphone)
 public class ModifyPhoneActivity extends Activity{

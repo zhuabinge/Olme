@@ -24,6 +24,7 @@ import java.util.LinkedList;
 
 /**
  * Created by Bingo on 2014/8/9.
+ * 订单记录
  */
 @EActivity(R.layout.activity_orderrecord)
 public class OrderRecordActivity extends Activity {

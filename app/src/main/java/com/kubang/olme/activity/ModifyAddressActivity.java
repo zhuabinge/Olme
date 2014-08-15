@@ -20,6 +20,7 @@ import org.androidannotations.annotations.ViewById;
 
 /**
  * Created by Bingo on 2014/8/15.
+ * 修改我的地址
  */
 @EActivity(R.layout.activity_modifyaddress)
 public class ModifyAddressActivity extends Activity {

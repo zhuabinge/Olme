@@ -27,6 +27,7 @@ import org.springframework.web.client.HttpStatusCodeException;
 
 /**
  * Created by Bingo on 2014/8/7.
+ * 注册界面
  */
 @EActivity(R.layout.activity_register)
 public class RegisterActivity extends Activity {

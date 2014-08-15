@@ -17,6 +17,7 @@ import org.androidannotations.annotations.ViewById;
 
 /**
  * Created by Bingo on 2014/8/15.
+ * 修改我的生日
  */
 @EActivity(R.layout.activity_modifybirthday)
 public class ModifyBirthdayActivity extends Activity {

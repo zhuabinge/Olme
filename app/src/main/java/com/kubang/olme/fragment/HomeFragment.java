@@ -18,6 +18,7 @@ import org.androidannotations.annotations.Bean;
 
 /**
  * Created by Bingo on 2014/8/4.
+ * app底部菜单的首页
  */
 public class HomeFragment extends Fragment{
     private SimpleAdapter adapter;

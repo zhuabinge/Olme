@@ -24,8 +24,9 @@ import java.util.LinkedList;
 
 /**
  * Created by Bingo on 2014/8/4.
+ * app底部菜单的交流
  */
-public class DiscussFragment extends Fragment {
+public class CommunicationFragment extends Fragment {
 
     private String[] mStrings = {"Abbaye de Belloc", "Abbaye du Mont des Cats", "Abertam", "Abondance", "Ackawi",
             "Acorn", "Adelost", "Affidelice au Chablis", "Afuega'l Pitu", "Airag", "Airedale", "Aisy Cendre",

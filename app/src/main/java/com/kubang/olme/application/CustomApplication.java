@@ -4,6 +4,7 @@ import android.app.Application;
 
 /**
  * Created by Bingo on 2014/8/9.
+ * 全局变量，用于记住登陆状态信息
  */
 public class CustomApplication extends Application {
     private static final String VALUE = "Logout";

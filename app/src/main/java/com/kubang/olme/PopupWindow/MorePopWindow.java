@@ -24,6 +24,7 @@ import java.util.List;
 
 /**
  * Created by Bingo on 2014/8/4.
+ * app右上角的更多菜单窗口
  */
 public class MorePopWindow extends PopupWindow {
     private View conentView;

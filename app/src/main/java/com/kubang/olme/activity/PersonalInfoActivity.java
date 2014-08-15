@@ -19,6 +19,7 @@ import org.androidannotations.annotations.ViewById;
 
 /**
  * Created by Bingo on 2014/8/10.
+ * 个人信息
  */
 
 @EActivity(R.layout.activity_personalinfo)

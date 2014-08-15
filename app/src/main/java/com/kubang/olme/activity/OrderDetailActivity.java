@@ -6,6 +6,7 @@ import org.androidannotations.annotations.EActivity;
 
 /**
  * Created by Bingo on 2014/8/12.
+ * 订单详情
  */
 @EActivity(R.layout.activity_orderdetail)
 public class OrderDetailActivity extends Activity {

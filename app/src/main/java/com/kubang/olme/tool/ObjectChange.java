@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * Created by Bingo on 2014/8/14.
+ * 调用ObjMapReflect,将List中的对象转换成HashMap后，再将list返回
  */
 public class ObjectChange {
     private static List<HashMap<String,Object>> list;
@@ -99,5 +100,4 @@ public class ObjectChange {
         }
         return list;
     }
-
 }

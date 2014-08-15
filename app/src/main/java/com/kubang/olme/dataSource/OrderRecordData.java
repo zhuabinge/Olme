@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * Created by Bingo on 2014/8/15.
+ * （测试）作为listview中item的数据源
  */
 public class OrderRecordData {
     public static LinkedList<HashMap<String, Object>> getDataSource() {

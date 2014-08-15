@@ -6,6 +6,7 @@ import java.util.Map;
 
 /**
  * Created by Bingo on 2014/8/14.
+ * 反射，将Object转换成HashMap
  */
 public class ObjMapReflect {
     public static HashMap<String,Object> changeToHashMap(Object obj){

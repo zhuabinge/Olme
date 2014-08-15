@@ -11,6 +11,7 @@ import org.androidannotations.annotations.EActivity;
 
 /**
  * Created by Bingo on 2014/8/14.
+ * 修改我的头像
  */
 @EActivity(R.layout.activity_modifyheadphoto)
 public class ModifyHeadPhotoActivity extends Activity {

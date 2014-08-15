@@ -22,6 +22,7 @@ import org.androidannotations.annotations.EFragment;
 
 /**
  * Created by Bingo on 2014/8/4.
+ * app底部菜单的个人中心
  */
 @EFragment(R.layout.tab4)
 public class PersonalFragment extends Fragment {

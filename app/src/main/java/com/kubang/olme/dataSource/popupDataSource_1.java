@@ -10,6 +10,7 @@ import java.util.Objects;
 
 /**
  * Created by Bingo on 2014/8/5.
+ * 作为app右上角的菜单项的数据源
  */
 public class popupDataSource_1 {
     public static List<HashMap<String, Object>> getData_1() {

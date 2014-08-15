@@ -27,6 +27,11 @@ import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.rest.RestService;
 import org.springframework.web.client.HttpStatusCodeException;
 
+/**
+ * Created by Bingo on 2014/8/1
+ * 登陆
+ */
+
 @EActivity(R.layout.activity_login)
 public class LoginActivity extends Activity {
 
