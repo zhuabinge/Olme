@@ -13,7 +13,7 @@ import java.util.List;
  * Created by wzy on 2014/8/16.
  */
 //@Rest(rootUrl="http://192.168.137.220:8080/olme/user/",converters = GsonHttpMessageConverter.class)
-@Rest(rootUrl="http://10.0.2.2:8080/olme/",converters = GsonHttpMessageConverter.class)
+@Rest(rootUrl="http://10.0.2.2:8080/olme/user/",converters = GsonHttpMessageConverter.class)
 public interface UserApi {
     @Get("login/{userEmail}/{userPw}")
     LoginUser login(String userEmail,String userPw);
