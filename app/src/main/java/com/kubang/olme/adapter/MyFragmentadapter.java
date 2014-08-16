@@ -1,23 +1,18 @@
 package com.kubang.olme.adapter;
 
-import java.util.List;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.view.Choreographer;
-import android.view.View;
-import android.view.ViewGroup;
+
+import java.util.List;
 
 /**
- * 碎片适配器，viewpager在使用
+ * Created by Bingo on 2014/8/16.
  */
-
 public class MyFragmentadapter extends FragmentPagerAdapter {
     private FragmentManager fm;
     private List<Fragment> list;
+
     public MyFragmentadapter(FragmentManager fm, List<Fragment> list) {
         super(fm);
         this.fm = fm;
@@ -42,3 +37,4 @@ public class MyFragmentadapter extends FragmentPagerAdapter {
 //        list.get(position).
 //    }
 }
+
