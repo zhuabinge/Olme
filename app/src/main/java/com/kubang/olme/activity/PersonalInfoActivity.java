@@ -48,8 +48,8 @@ public class PersonalInfoActivity extends Activity {
 
     @ViewById(R.id.infoPhone)
     TextView infoPhone;
-
-
+    @ViewById(R.id.infoEmail)
+    TextView infoEmail;
     private LayoutInflater inflater;
     private View views;
     private Byte[] userphoto;
@@ -59,6 +59,14 @@ public class PersonalInfoActivity extends Activity {
     private String userAddress;
     private String userSex;
     private String userPhone;
+    /**
+     * 昵称的requestCode
+     */
+    private static int REQUESTCODE_NAME = 1;
+    private static int REQUESTCODE_BIRTHDAY = 2;
+    private static int REQUESTCODE_ADDRESS = 3;
+    private static int REQUESTCODE_SEX = 4;
+    private static int REQUESTCODE_PHONE = 5;
 
     @AfterViews
     void init() {
@@ -69,62 +77,91 @@ public class PersonalInfoActivity extends Activity {
                 R.layout.activity_personalinfo, null, false);
 
         SharedPreferences sp = sp = this.getSharedPreferences("userInfo", 0);
-        userName = sp.getString("userName","");
-        userEmail = sp.getString("userEmail","");
-        userAddress = sp.getString("userAddress","");
-        userBirthday = sp.getString("userBirthday","");
-        userPhone = sp.getString("userPhone","");
-        userSex = sp.getString("userSex","");
+        userName = sp.getString("userName", "");
+        userEmail = sp.getString("userEmail", "");
+        userAddress = sp.getString("userAddress", "");
+        userBirthday = sp.getString("userBirthday", "");
+        userPhone = sp.getString("userPhone", "");
+        userSex = sp.getString("userSex", "");
 
-
+        //设置TextView显示用户属性
+        infoName.setText(this.userName);
+        infoEmail.setText(this.userEmail);
         infoAddress.setText(userAddress);
+        infoPhone.setText(this.userPhone);
+        infoSex.setText(this.userSex);
+        infoBirthday.setText(this.userBirthday);
     }
 
+
     @Click(R.id.myHeadPhoto)
-    void myHeadPhotoIsClicked(){
-        Intent intent = new Intent(this,ModifyHeadPhotoActivity_.class);
+    void myHeadPhotoIsClicked() {
+        Intent intent = new Intent(this, ModifyHeadPhotoActivity_.class);
         startActivity(intent);
     }
 
     @Click(R.id.myName)
-    void myNameIsClicked(){
-        Intent intent = new Intent(this,ModifyNameActivity_.class);
-        startActivity(intent);
+    void myNameIsClicked() {
+        Intent intent = new Intent(this, ModifyNameActivity_.class);
+        startActivityForResult(intent, PersonalInfoActivity.REQUESTCODE_NAME);
     }
 
     @Click(R.id.myBirthday)
-    void myBirthdayIsClicked(){
-        Intent intent = new Intent(this,ModifyBirthdayActivity_.class);
-        startActivity(intent);
+    void myBirthdayIsClicked() {
+        Intent intent = new Intent(this, ModifyBirthdayActivity_.class);
+        startActivityForResult(intent, PersonalInfoActivity.REQUESTCODE_BIRTHDAY);
     }
 
     @Click(R.id.myAddress)
-    void myAddressIsClicked(){
-        Intent intent = new Intent(this,ModifyAddressActivity_.class);
-        intent.putExtra("oldAddress",userAddress);
-        startActivity(intent);
+    void myAddressIsClicked() {
+        Intent intent = new Intent(this, ModifyAddressActivity_.class);
+        intent.putExtra("oldAddress", userAddress);
+        startActivityForResult(intent, PersonalInfoActivity.REQUESTCODE_ADDRESS);
     }
 
     @Click(R.id.mySex)
-    void mySexIsClicked(){
-        Intent intent = new Intent(this,ModifySexActivity_.class);
-        startActivity(intent);
+    void mySexIsClicked() {
+        Intent intent = new Intent(this, ModifySexActivity_.class);
+        startActivityForResult(intent, PersonalInfoActivity.REQUESTCODE_SEX);
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // TODO Auto-generated method stub
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == 9) {
+            String editTextValue = data.getStringExtra("editTextValue");
+            if (requestCode == REQUESTCODE_SEX) {
+                infoSex.setText(editTextValue);
+            } else if (requestCode == REQUESTCODE_NAME) {
+                infoName.setText(editTextValue);
+            } else if (requestCode == REQUESTCODE_ADDRESS) {
+                infoAddress.setText(editTextValue);
+            } else if (requestCode == REQUESTCODE_PHONE) {
+                infoPhone.setText(editTextValue);
+            } else if (requestCode == REQUESTCODE_BIRTHDAY) {
+                infoBirthday.setText(editTextValue);
+            }
+        }
     }
 
     @Click(R.id.myPhone)
-    void myPhoneIsClicked(){
-        Intent intent = new Intent(this,ModifyPhoneActivity_.class);
-        startActivity(intent);
+    void myPhoneIsClicked() {
+        Intent intent = new Intent(this, ModifyPhoneActivity_.class);
+        startActivityForResult(intent, PersonalInfoActivity.REQUESTCODE_PHONE);
     }
 
 
-    @Click(R.id.returnbt)    //返回前个页面
+    @Click(R.id.returnbt)
+        //返回前个页面
     void returnbtIsClicked() {
         headTitle.setText("");
         PersonalInfoActivity.this.finish();  //结束本Activity
     }
 
-    @Click(R.id.morebt)   //显示下拉菜单
+    @Click(R.id.morebt)
+        //显示下拉菜单
     void morebtIsClicked() {
         MorePopWindow morePopWindow = new MorePopWindow(PersonalInfoActivity.this, views);
         morePopWindow.showPopupWindow(morebt);  //显示more窗口

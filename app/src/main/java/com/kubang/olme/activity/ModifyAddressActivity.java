@@ -7,10 +7,10 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 import com.kubang.olme.application.ExitApplication;
+import com.kubang.olme.tool.ResultIntent;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Background;
@@ -43,16 +43,18 @@ public class ModifyAddressActivity extends Activity {
             sharedata.commit();
             System.out.println(tempData);
         }
+        ResultIntent.resultIntent(this, tempData);
         finish();
     }
 
     @AfterViews
     void init() {
         ExitApplication.getInstance().addActivity(this);
-        sharedata = getSharedPreferences("userInfo", 0).edit();
-
-        Intent intent = getIntent();
-        oldAddress = intent.getStringExtra("oldAddress");
+        //获取本地数据
+        SharedPreferences  sp = this.getSharedPreferences("userInfo", 0);
+        //获取本地数据编辑器
+        sharedata = sp.edit();
+        oldAddress = sp.getString("userAddress","");
         content.setText(oldAddress);
 
         Window window = getWindow();

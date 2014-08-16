@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 
 import com.kubang.olme.application.ExitApplication;
+import com.kubang.olme.tool.ResultIntent;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
@@ -21,7 +22,6 @@ import org.androidannotations.annotations.ViewById;
  */
 @EActivity(R.layout.activity_modifybirthday)
 public class ModifyBirthdayActivity extends Activity {
-
     @ViewById(R.id.datePicker)
     DatePicker datePicker;
 
@@ -31,16 +31,26 @@ public class ModifyBirthdayActivity extends Activity {
     private SharedPreferences.Editor sharedata;
     private String tempData;
     private String oldBirthday;
+    Intent intent;
 
     @AfterViews
     void init() {
+        int date;
+        int year;
+        int yue;
         ExitApplication.getInstance().addActivity(this);
         sharedata = getSharedPreferences("userInfo", 0).edit();
-
-        Intent intent = getIntent();
-        oldBirthday = intent.getStringExtra("oldBirthday");
+        //获取本地数据
+        SharedPreferences sp = this.getSharedPreferences("userInfo", 0);
+        oldBirthday = sp.getString("userBirthday", "");
 //        content.setText(oldAddress);
-
+        if (oldBirthday != "") {
+            String[] dateStr = oldBirthday.split("-");
+            date = Integer.parseInt(dateStr[2]);
+            yue = Integer.parseInt(dateStr[1]) - 1;
+            year = Integer.parseInt(dateStr[0]);
+            datePicker.updateDate(year, yue, date);
+        }
         Window window = getWindow();
         WindowManager.LayoutParams layoutParams = window.getAttributes();
         //设置窗口的大小及透明度
@@ -52,8 +62,14 @@ public class ModifyBirthdayActivity extends Activity {
 
 
     @Click(R.id.birthdaySave)
-    void birthdaySaveIsClicked(){
-        sharedata.putString("userBirthday",tempData);
+    void birthdaySaveIsClicked() {
+        tempData = datePicker.getYear() + "-" + (datePicker.getMonth() + 1) + "-" + datePicker.getDayOfMonth();
+
+        System.out.print(tempData);
+        sharedata.putString("userBirthday", tempData);
         sharedata.commit();
+        tempData = datePicker.getYear() + "-" + (datePicker.getMonth() + 1) + "-" + datePicker.getDayOfMonth();
+        ResultIntent.resultIntent(this, tempData);
+        finish();//必须手动finish
     }
 }
