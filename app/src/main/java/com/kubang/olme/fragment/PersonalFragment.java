@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.kubang.olme.activity.CollectionActivity_;
+import com.kubang.olme.activity.MyCollectionActivity_;
 import com.kubang.olme.activity.MyQuestionActivity_;
 import com.kubang.olme.activity.OrderRecordActivity_;
 import com.kubang.olme.activity.PersonalInfoActivity_;
@@ -85,7 +85,7 @@ public class PersonalFragment extends Fragment {
             public void onClick(View v) {
                 app = (CustomApplication) getActivity().getApplication();
                 if ("Login".equals(app.getValue())) {
-                    Intent intent = new Intent(getActivity(), CollectionActivity_.class);
+                    Intent intent = new Intent(getActivity(), MyCollectionActivity_.class);
                     startActivity(intent);
                 } else {
                     toast.show();

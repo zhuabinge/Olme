@@ -43,7 +43,7 @@
             android:name=".MyQuestionActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity
-            android:name=".CollectionActivity_"
+            android:name=".MyCollectionActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity
             android:name=".PersonalInfoActivity_"
