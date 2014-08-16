@@ -10,22 +10,18 @@ public class CourseType {
     private String typeName;
     private String typePhoto;
     private String description;
-    private int totalCourseCount;   //课程总数
-    private int totalTime;  //总课时
-    private int totalVedioCount; //总视频数
+    private Long totalCourseCount;   //课程总数
 
     public CourseType() {
         super();
     }
 
-    public CourseType(int typeId, String typeName, String typePhoto, String description, int totalCourseCount, int totalTime, int totalVedioCount) {
+    public CourseType(int typeId, String typeName, String typePhoto, String description, Long totalCourseCount) {
         this.typeId = typeId;
         this.typeName = typeName;
         this.typePhoto = typePhoto;
         this.description = description;
         this.totalCourseCount = totalCourseCount;
-        this.totalTime = totalTime;
-        this.totalVedioCount = totalVedioCount;
     }
 
     public int getTypeId() {
@@ -60,39 +56,20 @@ public class CourseType {
         this.description = description;
     }
 
-    public int getTotalCourseCount() {
+    public Long getTotalCourseCount() {
         return totalCourseCount;
     }
 
-    public void setTotalCourseCount(int totalCourseCount) {
+    public void setTotalCourseCount(Long totalCourseCount) {
         this.totalCourseCount = totalCourseCount;
     }
 
-    public int getTotalTime() {
-        return totalTime;
-    }
+   
 
-    public void setTotalTime(int totalTime) {
-        this.totalTime = totalTime;
-    }
-
-    public int getTotalVedioCount() {
-        return totalVedioCount;
-    }
-
-    public void setTotalVedioCount(int totalVedioCount) {
-        this.totalVedioCount = totalVedioCount;
-    }
-
-//    public class CourseTypeList{
-//        private List<CourseType> courseTypeList;
-//
-//        public List<CourseType> getCourseTypeList() {
-//            return courseTypeList;
-//        }
-//
-//        public void setCourseTypeList(List<CourseType> courseTypeList) {
-//            this.courseTypeList = courseTypeList;
-//        }
-//    }
+	@Override
+	public String toString() {
+		return "CourseType [typeId=" + typeId + ", typeName=" + typeName
+				+ ", typePhoto=" + typePhoto + ", description=" + description
+				+ ", totalCourseCount=" + totalCourseCount + ", totalTime="+ "]";
+	}
 }

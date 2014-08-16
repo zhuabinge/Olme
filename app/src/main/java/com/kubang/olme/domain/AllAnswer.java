@@ -1,20 +1,17 @@
 package com.kubang.olme.domain;
 
-import java.sql.Date;
-import java.util.List;
+import java.util.Date;
 
 /**
  * Created by Bingo on 2014/8/13.
  */
 public class AllAnswer {
-    private int commentId;
+	private int commentId;
     private int comId;
-    private int userId;
     private int userAnswerId;
     private int userReplyId;
     private String commentContent;
     private Date commentTime;
-    private String  userName;
     private String userAnswerName;
     private String userReplyName;
 
@@ -22,15 +19,13 @@ public class AllAnswer {
         super();
     }
 
-    public AllAnswer(int commentId, int comId, int userId, int userAnswerId, int userReplyId, String commentContent, Date commentTime, String userName, String userAnswerName, String userReplyName) {
+    public AllAnswer(int commentId, int comId, int userAnswerId, int userReplyId, String commentContent, Date commentTime, String userAnswerName, String userReplyName) {
         this.commentId = commentId;
         this.comId = comId;
-        this.userId = userId;
         this.userAnswerId = userAnswerId;
         this.userReplyId = userReplyId;
         this.commentContent = commentContent;
         this.commentTime = commentTime;
-        this.userName = userName;
         this.userAnswerName = userAnswerName;
         this.userReplyName = userReplyName;
     }
@@ -51,13 +46,7 @@ public class AllAnswer {
         this.comId = comId;
     }
 
-    public int getUserId() {
-        return userId;
-    }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
     public String getCommentContent() {
         return commentContent;
@@ -75,13 +64,7 @@ public class AllAnswer {
         this.commentTime = commentTime;
     }
 
-    public String getUserName() {
-        return userName;
-    }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     public int getUserAnswerId() {
         return userAnswerId;
@@ -115,31 +98,13 @@ public class AllAnswer {
         this.userReplyName = userReplyName;
     }
 
-    @Override
-    public String toString() {
-        return "AllAnswer{" +
-                "commentId=" + commentId +
-                ", comId=" + comId +
-                ", userId=" + userId +
-                ", userAnswerId=" + userAnswerId +
-                ", userReplyId=" + userReplyId +
-                ", commentContent='" + commentContent + '\'' +
-                ", commentTime=" + commentTime +
-                ", userName='" + userName + '\'' +
-                ", userAnswerName='" + userAnswerName + '\'' +
-                ", userReplyName='" + userReplyName + '\'' +
-                '}';
-    }
-
-//    public class AllAnswerList{
-//        private List<AllAnswer> allAnswerList;
-//
-//        public List<AllAnswer> getAllAnswerList() {
-//            return allAnswerList;
-//        }
-//
-//        public void setAllAnswerList(List<AllAnswer> allAnswerList) {
-//            this.allAnswerList = allAnswerList;
-//        }
-//    }
+	@Override
+	public String toString() {
+		return "AllAnswer [commentId=" + commentId + ", comId=" + comId
+				+ ", userAnswerId=" + userAnswerId
+				+ ", userReplyId=" + userReplyId + ", commentContent="
+				+ commentContent + ", commentTime=" + commentTime
+				+ ", userAnswerName="
+				+ userAnswerName + ", userReplyName=" + userReplyName + "]";
+	}
 }

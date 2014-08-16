@@ -17,7 +17,7 @@ public class MyCollection {
         super();
     }
 
-    public MyCollection(int userId, int vedioId, String vedioName, String vedioLocation, int vedioOpenLength, int vedioLength) {
+    public MyCollection(int userId, int vedioId, String vedioName, String vedioLocation, int vedioLength,int vedioOpenLength) {
         this.userId = userId;
         this.vedioId = vedioId;
         this.vedioName = vedioName;
@@ -66,23 +66,19 @@ public class MyCollection {
         this.vedioOpenLength = vedioOpenLength;
     }
 
-    public int getVedioLength() {
-        return vedioLength;
-    }
+	public int getVedioLength() {
+		return vedioLength;
+	}
 
-    public void setVedioLength(int vedioLength) {
-        this.vedioLength = vedioLength;
-    }
+	public void setVedioLength(int vedioLength) {
+		this.vedioLength = vedioLength;
+	}
 
-//    public class MyCollectionList{
-//        private List<MyCollection> myCollection;
-//
-//        public List<MyCollection> getMyCollection() {
-//            return myCollection;
-//        }
-//
-//        public void setMyCollection(List<MyCollection> myCollection) {
-//            this.myCollection = myCollection;
-//        }
-//    }
+	@Override
+	public String toString() {
+		return "MyCollection [userId=" + userId + ", vedioId=" + vedioId
+				+ ", vedioName=" + vedioName + ", vedioLocation="
+				+ vedioLocation + ", vedioOpenLength=" + vedioOpenLength
+				+ ", vedioLength=" + vedioLength + "]";
+	}
 }

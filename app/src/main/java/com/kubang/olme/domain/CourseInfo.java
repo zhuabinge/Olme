@@ -15,12 +15,13 @@ public class CourseInfo {
     private String courseDescription;
     private String coursePhoto;
     private float price;
+    private Long chapterCount;
 
     public CourseInfo() {
         super();
     }
 
-    public CourseInfo(int typeId, int courseId, int teacherId, String courseName, String teacherName, String courseDescription, String coursePhoto, float price) {
+    public CourseInfo(int typeId, int courseId, int teacherId, String courseName, String teacherName, String courseDescription, String coursePhoto, float price,Long chapterCount) {
         this.typeId = typeId;
         this.courseId = courseId;
         this.teacherId = teacherId;
@@ -29,6 +30,7 @@ public class CourseInfo {
         this.courseDescription = courseDescription;
         this.coursePhoto = coursePhoto;
         this.price = price;
+        this.chapterCount = chapterCount;
     }
 
     public int getTypeId() {
@@ -95,17 +97,22 @@ public class CourseInfo {
         this.price = price;
     }
 
-//    public class CourseInfoList{
-//        private List<CourseType> courseTypeList;
-//
-//        public List<CourseType> getCourseTypeList() {
-//            return courseTypeList;
-//        }
-//
-//        public void setCourseTypeList(List<CourseType> courseTypeList) {
-//            this.courseTypeList = courseTypeList;
-//        }
-//    }
+	public Long getChapterCount() {
+		return chapterCount;
+	}
+
+	public void setChapterCount(Long chapterCount) {
+		this.chapterCount = chapterCount;
+	}
+
+	@Override
+	public String toString() {
+		return "CourseInfo [typeId=" + typeId + ", courseId=" + courseId
+				+ ", teacherId=" + teacherId + ", courseName=" + courseName
+				+ ", teacherName=" + teacherName + ", courseDescription="
+				+ courseDescription + ", coursePhoto=" + coursePhoto
+				+ ", price=" + price +",chapterCount"+chapterCount+ "]";
+	}
 
 }
 

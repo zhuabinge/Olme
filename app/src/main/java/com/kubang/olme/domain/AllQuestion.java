@@ -1,7 +1,6 @@
 package com.kubang.olme.domain;
 
-import java.sql.Date;
-import java.util.List;
+import java.util.Date;
 
 /**
  * Created by Bingo on 2014/8/13.
@@ -14,22 +13,7 @@ public class AllQuestion {
     private String commTheme;
     private String comContent;
     private Date comStartTime;
-    private int answerCount;
-
-    public AllQuestion() {
-        super();
-    }
-
-    public AllQuestion(int userId, int comId, String userName, String userPhoto, String commTheme, String comContent, Date comStartTime, int answerCount) {
-        this.userId = userId;
-        this.comId = comId;
-        this.userName = userName;
-        this.userPhoto = userPhoto;
-        this.commTheme = commTheme;
-        this.comContent = comContent;
-        this.comStartTime = comStartTime;
-        this.answerCount = answerCount;
-    }
+    private Long answerCount;
 
     public int getUserId() {
         return userId;
@@ -87,24 +71,21 @@ public class AllQuestion {
         this.comStartTime = comStartTime;
     }
 
-    public int getAnswerCount() {
+    public Long getAnswerCount() {
         return answerCount;
     }
 
-    public void setAnswerCount(int answerCount) {
+    public void setAnswerCount(Long answerCount) {
         this.answerCount = answerCount;
     }
 
-//    private class AllQuestionList{
-//        private List<AllQuestion> allQuestionList;
-//
-//        public List<AllQuestion> getAllQuestionList() {
-//            return allQuestionList;
-//        }
-//
-//        public void setAllQuestionList(List<AllQuestion> allQuestionList) {
-//            this.allQuestionList = allQuestionList;
-//        }
-//    }
-
+	@Override
+	public String toString() {
+		return "AllQuestion [userId=" + userId + ", comId=" + comId
+				+ ", userName=" + userName + ", userPhoto=" + userPhoto
+				+ ", commTheme=" + commTheme + ", comContent=" + comContent
+				+ ", comStartTime=" + comStartTime + ", answerCount="
+				+ answerCount + "]";
+	}
+    
 }

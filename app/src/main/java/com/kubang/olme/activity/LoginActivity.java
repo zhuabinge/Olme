@@ -4,15 +4,17 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.kubang.olme.PopupWindow.MorePopWindow;
-import com.kubang.olme.api.OlmeApi;
+import com.kubang.olme.api.UserApi;
 import com.kubang.olme.application.CustomApplication;
 import com.kubang.olme.application.ExitApplication;
 import com.kubang.olme.domain.LoginUser;
@@ -60,7 +62,7 @@ public class LoginActivity extends Activity {
     Button btr;
 
     @RestService
-    OlmeApi olmeApi;
+    UserApi olmeApi;
 
     String username;
     String password;
@@ -68,6 +70,7 @@ public class LoginActivity extends Activity {
     private LayoutInflater inflater;
     private View views;
     private CustomApplication app;
+    Toast toast;
 
     @AfterViews
     void init() {
@@ -125,7 +128,10 @@ public class LoginActivity extends Activity {
             login(username, password);
         }
         else{
-
+            toast = Toast.makeText(this,
+                    "帐号和密码不能为空！", Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
         }
     }
 
@@ -148,9 +154,9 @@ public class LoginActivity extends Activity {
     }
 
     @Background
-    void login(String username, String password) {
+    void login(String userEmail, String userPw) {
         try {
-            LoginUser user = olmeApi.login(username, password); //验证登陆
+            LoginUser user = olmeApi.login(userEmail, userPw); //验证登陆
             app.setValue("Login");
             System.out.println(user.toString());
             if (cbpassword.isChecked()) {  //记住用户名、密码、

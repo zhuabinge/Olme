@@ -145,16 +145,16 @@ public class OrederRecord {
         this.actualPrice = actualPrice;
     }
 
-//    public class OrderRecordList{
-//        private List<OrederRecord> orederRecordList;
-//
-//        public List<OrederRecord> getOrederRecordList() {
-//            return orederRecordList;
-//        }
-//
-//        public void setOrederRecordList(List<OrederRecord> orederRecordList) {
-//            this.orederRecordList = orederRecordList;
-//        }
-//    }
-
+	@Override
+	public String toString() {
+		return "OrederRecord [userId=" + userId + ", orderId=" + orderId
+				+ ", courseId=" + courseId + ", teacherId=" + teacherId
+				+ ", orderDate=" + orderDate + ", courseName=" + courseName
+				+ ", courseDescription=" + courseDescription + ", coursePhoto="
+				+ coursePhoto + ", teacherName=" + teacherName
+				+ ", courseTotalLength=" + courseTotalLength
+				+ ", consumeScore=" + consumeScore + ", coursePrice="
+				+ coursePrice + ", actualPrice=" + actualPrice + "]";
+	}
+    
 }

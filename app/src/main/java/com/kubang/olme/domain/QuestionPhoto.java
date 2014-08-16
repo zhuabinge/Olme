@@ -44,15 +44,10 @@ public class QuestionPhoto {
         this.photoLocation = photoLocation;
     }
 
-//    public class QuestionPhotoList{
-//        private List<QuestionPhoto> questionPhotoList;
-//
-//        public List<QuestionPhoto> getQuestionPhotoList() {
-//            return questionPhotoList;
-//        }
-//
-//        public void setQuestionPhotoList(List<QuestionPhoto> questionPhotoList) {
-//            this.questionPhotoList = questionPhotoList;
-//        }
-//    }
+	@Override
+	public String toString() {
+		return "QuestionPhoto [photoId=" + photoId + ", commId=" + commId
+				+ ", photoLocation=" + photoLocation + "]";
+	}
+
 }

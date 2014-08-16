@@ -7,14 +7,14 @@ import android.content.SharedPreferences;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.kubang.olme.PopupWindow.MorePopWindow;
-import com.kubang.olme.api.OlmeApi;
+import com.kubang.olme.api.UserApi;
 import com.kubang.olme.application.ExitApplication;
+import com.kubang.olme.domain.LoginUser;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Background;
@@ -44,7 +44,7 @@ public class RegisterActivity extends Activity {
     ImageView morebt;
 
     @RestService
-    OlmeApi olmeApi;
+    UserApi olmeApi;
 
     private SharedPreferences.Editor sharedata;
     private LayoutInflater inflater;
@@ -87,10 +87,10 @@ public class RegisterActivity extends Activity {
 
 
     @Background
-    void register(String username, String password) {
+    void register(String userEmail, String userPw) {
         try {
-            Boolean flag = olmeApi.registers(username, password);
-            if (flag) {
+            LoginUser user = olmeApi.login(userEmail, userPw);
+            if (user != null) {
                 toast = Toast.makeText(RegisterActivity.this,
                         "注册成功！3秒后自动跳转到登陆界面", Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);

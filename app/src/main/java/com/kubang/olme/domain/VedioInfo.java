@@ -71,4 +71,13 @@ public class VedioInfo {
     public void setVedioOpenLength(int vedioOpenLength) {
         this.vedioOpenLength = vedioOpenLength;
     }
+
+	@Override
+	public String toString() {
+		return "VedioInfo [vedioId=" + vedioId + ", chapterId=" + chapterId
+				+ ", vedioName=" + vedioName + ", vedioLocation="
+				+ vedioLocation + ", vedioLength=" + vedioLength
+				+ ", vedioOpenLength=" + vedioOpenLength + "]";
+	}
+    
 }

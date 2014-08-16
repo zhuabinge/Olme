@@ -1,24 +1,24 @@
 package com.kubang.olme.domain;
 
-import java.sql.Date;
-import java.util.List;
+import java.util.Date;
 
 /**
  * Created by Bingo on 2014/8/13.
  */
 public class MyQuestion {
+	
     private int userId;
     private int comId;
     private String commTheme;
     private String comContent;
     private Date comStartTime;
-    private int comCount;
+    private Long comCount;
 
     public MyQuestion() {
         super();
     }
 
-    public MyQuestion(int userId, int comId, String commTheme, String comContent, Date comStartTime, int comCount) {
+    public MyQuestion(int userId, int comId, String commTheme,Long comCount, String comContent, Date comStartTime) {
         this.userId = userId;
         this.comId = comId;
         this.commTheme = commTheme;
@@ -67,23 +67,19 @@ public class MyQuestion {
         this.comStartTime = comStartTime;
     }
 
-    public int getcomCount() {
-        return comCount;
-    }
+	public Long getComCount() {
+		return comCount;
+	}
 
-    public void setcomCount(int comCount) {
-        this.comCount = comCount;
-    }
+	public void setComCount(Long comCount) {
+		this.comCount = comCount;
+	}
 
-    //    public class MyQuestionList{
-//        private List<MyQuestion> myQuestionList;
-//
-//        public List<MyQuestion> getMyQuestionList() {
-//            return myQuestionList;
-//        }
-//
-//        public void setMyQuestionList(List<MyQuestion> myQuestionList) {
-//            this.myQuestionList = myQuestionList;
-//        }
-//    }
+	@Override
+	public String toString() {
+		return "MyQuestion [userId=" + userId + ", comId=" + comId
+				+ ", commTheme=" + commTheme + ", comContent=" + comContent
+				+ ", comStartTime=" + comStartTime + ", comCount=" + comCount
+				+ "]";
+	}
 }

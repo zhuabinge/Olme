@@ -1,6 +1,8 @@
 package com.kubang.olme.domain;
 
-import java.sql.Date;
+import java.util.Date;
+
+
 
 /**
  * Created by wuzeyong on 2014/7/31 0031.
@@ -21,7 +23,7 @@ public class LoginUser {
     public LoginUser() {
     }
 
-    public LoginUser(int userId, String userEmail, String userName, String password, int userScore, String userPhoto, String userAddress, Date userBirthday, String userPhone, String userSex) {
+    public LoginUser(int userId, String userEmail, String userName, String password, int userScore, String userSex,String userPhoto, String userAddress, Date userBirthday, String userPhone) {
         this.userId = userId;
         this.userEmail = userEmail;
         this.userName = userName;
@@ -34,7 +36,15 @@ public class LoginUser {
         this.userSex = userSex;
     }
 
-    public int getUserId() {
+    public String getUserSex() {
+		return userSex;
+	}
+
+	public void setUserSex(String userSex) {
+		this.userSex = userSex;
+	}
+
+	public int getUserId() {
         return userId;
     }
 
@@ -106,11 +116,15 @@ public class LoginUser {
         this.userPhone = userPhone;
     }
 
-    public String getUserSex() {
-        return userSex;
-    }
-
-    public void setUserSex(String userSex) {
-        this.userSex = userSex;
-    }
+	@Override
+	public String toString() {
+		return "LoginUser [userId=" + userId + ", userEmail=" + userEmail
+				+ ", userName=" + userName + ", password=" + password
+				+ ", userScore=" + userScore + ", userPhoto=" + userPhoto
+				+ ", userAddress=" + userAddress + ", userBirthday="
+				+ userBirthday + ", userPhone=" + userPhone + ", userSex="
+				+ userSex + "]";
+	}
+    
+    
 }
