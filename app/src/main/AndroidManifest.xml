@@ -40,13 +40,17 @@
             android:name=".OrderRecordActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity
-            android:name=".MyThemeActivity_"
+            android:name=".MyQuestionActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity
             android:name=".CollectionActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity
             android:name=".PersonalInfoActivity_"
+            android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+
+        <activity
+            android:name=".MyQuestionDetailActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
 
         <!-- 退出登陆窗口 -->

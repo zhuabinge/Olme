@@ -11,17 +11,19 @@ public class MyCollection {
     private String vedioName;
     private String vedioLocation;
     private int vedioOpenLength;
+    private int vedioLength;
 
     public MyCollection() {
         super();
     }
 
-    public MyCollection(int userId, int vedioId, String vedioName, String vedioLocation, int vedioOpenLength) {
+    public MyCollection(int userId, int vedioId, String vedioName, String vedioLocation, int vedioOpenLength, int vedioLength) {
         this.userId = userId;
         this.vedioId = vedioId;
         this.vedioName = vedioName;
         this.vedioLocation = vedioLocation;
         this.vedioOpenLength = vedioOpenLength;
+        this.vedioLength = vedioLength;
     }
 
     public int getUserId() {
@@ -64,6 +66,13 @@ public class MyCollection {
         this.vedioOpenLength = vedioOpenLength;
     }
 
+    public int getVedioLength() {
+        return vedioLength;
+    }
+
+    public void setVedioLength(int vedioLength) {
+        this.vedioLength = vedioLength;
+    }
 
 //    public class MyCollectionList{
 //        private List<MyCollection> myCollection;

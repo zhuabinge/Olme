@@ -8,25 +8,31 @@ import java.util.List;
  */
 public class AllAnswer {
     private int commentId;
-    private int courseId;
+    private int comId;
     private int userId;
+    private int userAnswerId;
+    private int userReplyId;
     private String commentContent;
     private Date commentTime;
     private String  userName;
-    private String userPhoto;
+    private String userAnswerName;
+    private String userReplyName;
 
     public AllAnswer() {
         super();
     }
 
-    public AllAnswer(int commentId, int courseId, int userId, String commentContent, Date commentTime, String userName, String userPhoto) {
+    public AllAnswer(int commentId, int comId, int userId, int userAnswerId, int userReplyId, String commentContent, Date commentTime, String userName, String userAnswerName, String userReplyName) {
         this.commentId = commentId;
-        this.courseId = courseId;
+        this.comId = comId;
         this.userId = userId;
+        this.userAnswerId = userAnswerId;
+        this.userReplyId = userReplyId;
         this.commentContent = commentContent;
         this.commentTime = commentTime;
         this.userName = userName;
-        this.userPhoto = userPhoto;
+        this.userAnswerName = userAnswerName;
+        this.userReplyName = userReplyName;
     }
 
     public int getCommentId() {
@@ -37,12 +43,12 @@ public class AllAnswer {
         this.commentId = commentId;
     }
 
-    public int getCourseId() {
-        return courseId;
+    public int getComId() {
+        return comId;
     }
 
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
+    public void setComId(int comId) {
+        this.comId = comId;
     }
 
     public int getUserId() {
@@ -77,12 +83,52 @@ public class AllAnswer {
         this.userName = userName;
     }
 
-    public String getUserPhoto() {
-        return userPhoto;
+    public int getUserAnswerId() {
+        return userAnswerId;
     }
 
-    public void setUserPhoto(String userPhoto) {
-        this.userPhoto = userPhoto;
+    public void setUserAnswerId(int userAnswerId) {
+        this.userAnswerId = userAnswerId;
+    }
+
+    public int getUserReplyId() {
+        return userReplyId;
+    }
+
+    public void setUserReplyId(int userReplyId) {
+        this.userReplyId = userReplyId;
+    }
+
+    public String getUserAnswerName() {
+        return userAnswerName;
+    }
+
+    public void setUserAnswerName(String userAnswerName) {
+        this.userAnswerName = userAnswerName;
+    }
+
+    public String getUserReplyName() {
+        return userReplyName;
+    }
+
+    public void setUserReplyName(String userReplyName) {
+        this.userReplyName = userReplyName;
+    }
+
+    @Override
+    public String toString() {
+        return "AllAnswer{" +
+                "commentId=" + commentId +
+                ", comId=" + comId +
+                ", userId=" + userId +
+                ", userAnswerId=" + userAnswerId +
+                ", userReplyId=" + userReplyId +
+                ", commentContent='" + commentContent + '\'' +
+                ", commentTime=" + commentTime +
+                ", userName='" + userName + '\'' +
+                ", userAnswerName='" + userAnswerName + '\'' +
+                ", userReplyName='" + userReplyName + '\'' +
+                '}';
     }
 
 //    public class AllAnswerList{

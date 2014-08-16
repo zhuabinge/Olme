@@ -18,7 +18,14 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/collectionList"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="#00000000"
+        android:dividerHeight="10dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp" />
 
 
 </LinearLayout>

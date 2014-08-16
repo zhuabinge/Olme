@@ -12,17 +12,19 @@ public class MyQuestion {
     private String commTheme;
     private String comContent;
     private Date comStartTime;
+    private int comCount;
 
     public MyQuestion() {
         super();
     }
 
-    public MyQuestion(int userId, int comId, String commTheme, String comContent, Date comStartTime) {
+    public MyQuestion(int userId, int comId, String commTheme, String comContent, Date comStartTime, int comCount) {
         this.userId = userId;
         this.comId = comId;
         this.commTheme = commTheme;
         this.comContent = comContent;
         this.comStartTime = comStartTime;
+        this.comCount = comCount;
     }
 
     public int getUserId() {
@@ -65,7 +67,15 @@ public class MyQuestion {
         this.comStartTime = comStartTime;
     }
 
-//    public class MyQuestionList{
+    public int getcomCount() {
+        return comCount;
+    }
+
+    public void setcomCount(int comCount) {
+        this.comCount = comCount;
+    }
+
+    //    public class MyQuestionList{
 //        private List<MyQuestion> myQuestionList;
 //
 //        public List<MyQuestion> getMyQuestionList() {
