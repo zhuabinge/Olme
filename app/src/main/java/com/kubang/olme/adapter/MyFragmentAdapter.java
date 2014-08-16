@@ -15,10 +15,10 @@ import android.view.ViewGroup;
  * 碎片适配器，viewpager在使用
  */
 
-public class MyFragmentadapter extends FragmentPagerAdapter {
+public class MyFragmentAdapter extends FragmentPagerAdapter {
     private FragmentManager fm;
     private List<Fragment> list;
-    public MyFragmentadapter(FragmentManager fm, List<Fragment> list) {
+    public MyFragmentAdapter(FragmentManager fm, List<Fragment> list) {
         super(fm);
         this.fm = fm;
         this.list = list;
