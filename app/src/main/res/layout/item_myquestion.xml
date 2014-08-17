@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@drawable/gray_backgroud"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corners_bg"
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -64,9 +64,10 @@
                         android:id="@+id/myThemeDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
+                        android:paddingTop="6dp"
                         android:text="2014-08-15"
-                        android:textSize="13dp" />
+                        android:textSize="13dp"
+                        android:textColor="@color/gray"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -90,8 +91,8 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_marginTop="3dp"
+            android:background="@drawable/corners_bg1"
             android:orientation="horizontal"
-            android:background="@drawable/corners_bg"
             android:padding="8dp">
 
             <TextView
@@ -100,18 +101,70 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="4"
-                android:text="1511111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+                android:text="111111111"
                 android:textSize="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/themeDetailImage"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/desktop" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/desktop" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/desktop" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/desktop" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/desktop" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/desktop" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/desktop" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/desktop" />
+
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:orientation="horizontal"
-            android:background="@drawable/corners_bg"
-            android:padding="5dp"
+            android:layout_gravity="right"
             android:layout_marginTop="5dp"
-            android:layout_gravity="right">
+            android:background="@drawable/corners_bg1"
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <TextView
                 android:layout_width="wrap_content"

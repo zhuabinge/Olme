@@ -6,51 +6,37 @@ import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.RatingBar;
-import android.widget.TextView;
+import android.widget.SimpleAdapter;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
-import com.kubang.olme.adapter.MyCollectionAdapter;
 import com.kubang.olme.application.ExitApplication;
-import com.kubang.olme.asyncTask.CollectionGetDataTask;
-import com.kubang.olme.dataSource.MyCollectionData;
+import com.kubang.olme.asyncTask.AnswerGetDataTask;
+import com.kubang.olme.dataSource.AnswerData;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * Created by Bingo on 2014/8/9.
- * 我的收藏
+ * Created by Bingo on 2014/8/16.
  */
-@EActivity(R.layout.activity_mycollection)
-public class MyCollectionActivity extends Activity {
-//    ExitApplication.getInstance().addActivity(this);
-
-
-    @ViewById(R.id.headTitle)
-    TextView headTitle;
-
-    @ViewById(R.id.myCollectionRatingBar)
-    RatingBar ratingBar;
+@EActivity(R.layout.activity_answerdetail)
+public class AnswerDetailActivity extends Activity{
 
     private PullToRefreshListView pullToRefreshListView;
-    private MyCollectionAdapter adapter;
-    private MyCollectionData data;
+    private SimpleAdapter adapter;
+    private AnswerData data;
     private LinkedList<HashMap<String,Object>> list;
 
-
     @AfterViews
-    void init(){
+    void init() {
         ExitApplication.getInstance().addActivity(this);
-        list =data.getDataSource();
-        headTitle.setText("我的收藏");  //设置标题
-        pullToRefreshListView = (PullToRefreshListView)this.findViewById(R.id.myCollectionList);  //下拉刷新
+        list = data.getDataSource();
+        pullToRefreshListView = (PullToRefreshListView) this.findViewById(R.id.answerList);  //下拉刷新
         pullToRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
             @Override
             public void onRefresh(PullToRefreshBase<ListView> refreshView) {
@@ -61,10 +47,14 @@ public class MyCollectionActivity extends Activity {
                 refreshView.getLoadingLayoutProxy().setLastUpdatedLabel(label);
 
                 // Do work to refresh the list here.
-                new CollectionGetDataTask(list,pullToRefreshListView,adapter).execute();
+                new AnswerGetDataTask(list, pullToRefreshListView, adapter).execute();
             }
         });
-        adapter = new MyCollectionAdapter(this,list);
+
+        adapter = new SimpleAdapter(this, list, R.layout.item_answer,
+                new String[]{"id", "name", "vedioLength", "rating"},
+                new int[]{R.id.answerUserId, R.id.answerUserName, R.id.answerDate, R.id.answerContent});
+
         ListView actualListView = pullToRefreshListView.getRefreshableView();
         actualListView.setAdapter(adapter);
 
@@ -72,15 +62,15 @@ public class MyCollectionActivity extends Activity {
         pullToRefreshListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(view.getContext(), AnswerDetailActivity_.class);
+                Intent intent = new Intent(view.getContext(), ReplyActivity_.class);
                 startActivity(intent);
             }
         });
     }
 
-    @Click(R.id.myCollectionRatingBar)
-    void ratingBarIsClick (){
-
-
+    @Click(R.id.replyUser)
+    void replyUserIsClicked(){
+        Intent intent = new Intent(this, ReplyActivity_.class);
+        startActivity(intent);
     }
 }

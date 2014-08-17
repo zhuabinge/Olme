@@ -14,7 +14,6 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.kubang.olme.application.ExitApplication;
 import com.kubang.olme.asyncTask.OrderGetDataTask;
 import com.kubang.olme.dataSource.MyQuestionData;
-import com.kubang.olme.dataSource.OrderRecordData;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -72,7 +71,7 @@ public class MyQuestionActivity extends Activity {
         pullToRefreshListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(view.getContext(),MyQuestionDetailActivity_.class);
+                Intent intent = new Intent(view.getContext(),AnswerDetailActivity_.class);
                 startActivity(intent);
             }
         });

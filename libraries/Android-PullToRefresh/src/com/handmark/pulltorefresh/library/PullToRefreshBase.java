@@ -1650,4 +1650,23 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
 		void onSmoothScrollFinished();
 	}
 
+    /**
+     * 判断是否显示条目是否为最顶
+     * @return
+     */
+    public boolean isHeaderShown() {
+
+        return getHeaderLayout().isShown();
+
+    }
+
+    /**
+     * 判断显示条目是否为最低
+     * @return
+     */
+    public boolean isFooterShown() {
+
+        return getFooterLayout().isShown();
+    }
+
 }
