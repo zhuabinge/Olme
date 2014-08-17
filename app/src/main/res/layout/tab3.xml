@@ -2,38 +2,48 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:divider="@drawable/abc_list_divider_holo_light"
+    android:orientation="vertical"
+    android:showDividers="middle">
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingTop="5dp">
 
             <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="40dp"
-                android:text="我的通知"
-                android:layout_gravity="left"
-                android:gravity="center"/>
+                android:id="@+id/messageCount"
+                android:layout_width="60dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:background="@drawable/message"
+                android:gravity="right"
+                android:text="1"
+                android:textColor="@color/red"
+                android:textSize="20dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="right">
+            android:gravity="center">
 
-            <Button
-                android:layout_width="120dp"
+            <TextView
+                android:id="@+id/writePanel"
+                android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:background="#f37f0e"
-                android:text="发起主题"
-                android:textColor="@color/white" />
+                android:background="@drawable/writepanel" />
         </LinearLayout>
     </LinearLayout>
 
@@ -44,9 +54,11 @@
         <com.handmark.pulltorefresh.library.PullToRefreshListView
             android:id="@+id/themeList"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-
-        </com.handmark.pulltorefresh.library.PullToRefreshListView>
+            android:layout_height="fill_parent"
+            android:divider="#00000000"
+            android:dividerHeight="10dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"/>
     </LinearLayout>
 
 </LinearLayout>

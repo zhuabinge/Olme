@@ -39,8 +39,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@color/lightgray"
-            android:textSize="22dp"
-            android:text="评论信息"/>
+            android:textSize="22dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -56,7 +55,7 @@
             android:layout_width="55dp"
             android:layout_height="40dp"
             android:background="@drawable/green_button"
-            android:text="评论"
+            android:text="发布"
             android:textColor="@color/white"/>
     </LinearLayout>
 </LinearLayout>

@@ -50,10 +50,19 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:paddingBottom="40dp"
-                android:paddingTop="20dp">
-
+                android:paddingTop="20dp"
+                >
+                <Button
+                    android:id="@+id/photoSelect"
+                    android:layout_width="100dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/green_button"
+                    android:gravity="center"
+                    android:text="选择"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
                 <Button
                     android:id="@+id/photoSave"
                     android:layout_width="100dp"

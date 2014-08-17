@@ -92,12 +92,12 @@
             android:orientation="horizontal"
             android:paddingRight="10dp">
 
-            <RatingBar
+            <Button
                 android:id="@+id/myCollectionRatingBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:numStars="1"
-                android:stepSize="1"/>
+                android:layout_marginTop="10dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/user_uncollecion"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

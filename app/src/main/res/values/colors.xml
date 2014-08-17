@@ -17,4 +17,5 @@
     <color name="lightgreen">#2fff3e</color>
     <color name="holo_light">#E8E8E7</color>
     <color name="replygreen">#7ecb0e</color>
+    <color name="red">#ff0000</color>
 </resources>

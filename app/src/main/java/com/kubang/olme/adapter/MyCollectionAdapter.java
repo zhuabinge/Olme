@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.kubang.olme.activity.R;
 
+import org.androidannotations.annotations.Click;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 
@@ -48,16 +50,28 @@ public class MyCollectionAdapter extends BaseAdapter {
             holder.id = (TextView)convertView.findViewById(R.id.myCollectionVedioId);
             holder.name = (TextView)convertView.findViewById(R.id.myCollectionVedioName);
             holder.vedioLength = (TextView)convertView.findViewById(R.id.myCollectionVedioLength);
-            holder.rating = (RatingBar) convertView.findViewById(R.id.myCollectionRatingBar);
+            holder.rating = (Button) convertView.findViewById(R.id.myCollectionRatingBar);
             convertView.setTag(holder);
         }else {
             holder = (ViewHolder)convertView.getTag();
         }
-        holder.id.setText((String)list.get(position).get("id"));
+        holder.id.setText((String)list.get(position).get("id"));//get
         holder.name.setText((String)list.get(position).get("name"));
         //Log.v("R", "R:" + (String) mData.get(position).get("rating"));
         holder.vedioLength.setText((String)list.get(position).get("length"));
-        holder.rating.setRating(Float.parseFloat(list.get(position).get("rating").toString()));
+        holder.rating.setBackgroundResource(R.drawable.user_collecion);
+        holder.rating.setTag(position);
+        holder.rating.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                int currentPosition = Integer.parseInt(v.getTag().toString());
+                list.remove(currentPosition);
+                MyCollectionAdapter.this.notifyDataSetChanged();
+
+//                  SendMain.this.getListView().refreshDrawableState();
+            }
+        });
         return convertView;
     }
 
@@ -66,6 +80,6 @@ public class MyCollectionAdapter extends BaseAdapter {
         public TextView id;
         public TextView name;
         public TextView vedioLength;
-        public RatingBar rating;
+        public Button rating;
     }
 }

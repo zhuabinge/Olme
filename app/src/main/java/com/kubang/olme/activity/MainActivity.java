@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kubang.olme.PopupWindow.MorePopWindow;
-import com.kubang.olme.adapter.MyFragmentadapter;
+import com.kubang.olme.adapter.MyFragmentAdapter;
 import com.kubang.olme.application.CustomApplication;
 import com.kubang.olme.application.ExitApplication;
 import com.kubang.olme.fragment.CommunicationFragment;
@@ -73,7 +73,7 @@ public class MainActivity extends FragmentActivity {
     CheckBox cblogin;
 
     private List<TextView> textviewList;
-    private MyFragmentadapter adapters;
+    private MyFragmentAdapter adapters;
     private int currIndex = 0;// 当前页卡编号
     private FragmentManager manager;
     private List<Fragment> list = null;
@@ -126,7 +126,7 @@ public class MainActivity extends FragmentActivity {
         list.add(new CommunicationFragment());
         list.add(new PersonalFragment());
         // transaction = manager.beginTransaction();
-        adapters = new MyFragmentadapter(manager, list);
+        adapters = new MyFragmentAdapter(manager, list);
         viewpager.setAdapter(adapters);
         viewpager.setOnPageChangeListener(new MyOnPageChangeListener(list,textviewList, currIndex));   //监听ViewPager的变化事件
         adapters.notifyDataSetChanged();

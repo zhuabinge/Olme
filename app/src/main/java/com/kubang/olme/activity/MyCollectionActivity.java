@@ -1,16 +1,20 @@
 package com.kubang.olme.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.text.format.DateUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.kubang.olme.PopupWindow.MorePopWindow;
 import com.kubang.olme.adapter.MyCollectionAdapter;
 import com.kubang.olme.application.ExitApplication;
 import com.kubang.olme.asyncTask.CollectionGetDataTask;
@@ -32,23 +36,29 @@ import java.util.LinkedList;
 public class MyCollectionActivity extends Activity {
 //    ExitApplication.getInstance().addActivity(this);
 
+    @ViewById(R.id.morebt)
+    ImageView morebt;
 
     @ViewById(R.id.headTitle)
     TextView headTitle;
-
-    @ViewById(R.id.myCollectionRatingBar)
-    RatingBar ratingBar;
 
     private PullToRefreshListView pullToRefreshListView;
     private MyCollectionAdapter adapter;
     private MyCollectionData data;
     private LinkedList<HashMap<String,Object>> list;
+    private LayoutInflater inflater;
+    private View views;
 
 
     @AfterViews
     void init(){
         ExitApplication.getInstance().addActivity(this);
         list =data.getDataSource();
+
+        inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        views = inflater.inflate(    //获取自定义布局文件dialog.xml的视图
+                R.layout.activity_login, null, false);
+
         headTitle.setText("我的收藏");  //设置标题
         pullToRefreshListView = (PullToRefreshListView)this.findViewById(R.id.myCollectionList);  //下拉刷新
         pullToRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
@@ -78,9 +88,15 @@ public class MyCollectionActivity extends Activity {
         });
     }
 
-    @Click(R.id.myCollectionRatingBar)
-    void ratingBarIsClick (){
+    @Click(R.id.returnbt)
+    void returnbtIsClick() {
+        MyCollectionActivity.this.finish();  //结束本Activity
+    }
 
 
+    @Click(R.id.morebt)
+    void morebtIsClick() {
+        MorePopWindow morePopWindow = new MorePopWindow(MyCollectionActivity.this, views);
+        morePopWindow.showPopupWindow(morebt);  //显示more窗口
     }
 }

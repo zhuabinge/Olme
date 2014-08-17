@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.kubang.olme.application.ExitApplication;
-import com.kubang.olme.asyncTask.OrderGetDataTask;
+import com.kubang.olme.asyncTask.QuestionGetDatTask;
 import com.kubang.olme.dataSource.MyQuestionData;
 
 import org.androidannotations.annotations.AfterViews;
@@ -56,13 +56,13 @@ public class MyQuestionActivity extends Activity {
                 refreshView.getLoadingLayoutProxy().setLastUpdatedLabel(label);
 
                 // Do work to refresh the list here.
-                new OrderGetDataTask(list,pullToRefreshListView,adapter).execute();
+                new QuestionGetDatTask(list,pullToRefreshListView,adapter).execute();
             }
         });
 
-        adapter = new SimpleAdapter(this, list, R.layout.item_myquestion,
+        adapter = new SimpleAdapter(this, list, R.layout.item_question,
                 new String[] { "id","img", "username","date", "phone", "address" ,"count"},
-                new int[] { R.id.myquestionId, R.id.myThemeHeadPhoto, R.id.myThemeUserName, R.id.myThemeDate , R.id.myThemeName, R.id.myThemContent, R.id.myThemeCommentCount });
+                new int[] { R.id.questionId, R.id.themeUserHeadPhoto, R.id.themeUserName, R.id.themeDate , R.id.themeName, R.id.themContent, R.id.themeCommentCount });
 
         ListView actualListView = pullToRefreshListView.getRefreshableView();
         actualListView.setAdapter(adapter);
