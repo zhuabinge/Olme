@@ -7,45 +7,36 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.kubang.olme.application.ExitApplication;
-import com.kubang.olme.asyncTask.QuestionGetDatTask;
-import com.kubang.olme.dataSource.MyQuestionData;
+import com.kubang.olme.asyncTask.AnswerGetDataTask;
+import com.kubang.olme.dataSource.AnswerData;
 
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * Created by Bingo on 2014/8/9.
- * 我发布过的主题
+ * Created by Bingo on 2014/8/18.
  */
-@EActivity(R.layout.activity_myquestion)
-public class MyQuestionActivity extends Activity {
-//    ExitApplication.getInstance().addActivity(this);
-
-
-    @ViewById(R.id.headTitle)
-    TextView headTitle;
+@EActivity(R.layout.activity_answerdetail)
+public class MessageDetailActivity extends Activity {
 
     private PullToRefreshListView pullToRefreshListView;
     private SimpleAdapter adapter;
-    private MyQuestionData data;
+    private AnswerData data;
     private LinkedList<HashMap<String,Object>> list;
 
-
     @AfterViews
-    void init(){
+    void init() {
         ExitApplication.getInstance().addActivity(this);
-        list =data.getDataSource();
-        headTitle.setText("我的提问");  //设置标题
-        pullToRefreshListView = (PullToRefreshListView)this.findViewById(R.id.myQuestionList);  //下拉刷新
+        list = data.getDataSource();
+        pullToRefreshListView = (PullToRefreshListView) this.findViewById(R.id.answerList);  //下拉刷新
         pullToRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
             @Override
             public void onRefresh(PullToRefreshBase<ListView> refreshView) {
@@ -56,13 +47,13 @@ public class MyQuestionActivity extends Activity {
                 refreshView.getLoadingLayoutProxy().setLastUpdatedLabel(label);
 
                 // Do work to refresh the list here.
-                new QuestionGetDatTask(list,pullToRefreshListView,adapter).execute();
+                new AnswerGetDataTask(list, pullToRefreshListView, adapter).execute();
             }
         });
 
-        adapter = new SimpleAdapter(this, list, R.layout.item_question,
-        new String[] { "id","img", "username","date", "phone", "address" ,"count"},
-                new int[] { R.id.questionId, R.id.themeUserHeadPhoto, R.id.themeUserName, R.id.themeDate , R.id.themeName, R.id.themContent, R.id.themeCommentCount });
+        adapter = new SimpleAdapter(this, list, R.layout.item_answer,
+                new String[]{"id", "name", "vedioLength", "rating"},
+                new int[]{R.id.answerUserId, R.id.answerUserName, R.id.answerDate, R.id.answerContent});
 
         ListView actualListView = pullToRefreshListView.getRefreshableView();
         actualListView.setAdapter(adapter);
@@ -71,7 +62,7 @@ public class MyQuestionActivity extends Activity {
         pullToRefreshListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(view.getContext(),AnswerDetailActivity_.class);
+                Intent intent = new Intent(view.getContext(), SelectActivity_.class);
                 startActivity(intent);
             }
         });

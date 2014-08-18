@@ -17,7 +17,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.kubang.olme.activity.AddThemeActivity_;
 import com.kubang.olme.activity.AnswerDetailActivity_;
-import com.kubang.olme.activity.MyMessageActivity_;
+import com.kubang.olme.activity.MessageDetailActivity_;
 import com.kubang.olme.activity.R;
 import com.kubang.olme.asyncTask.QuestionGetDatTask;
 import com.kubang.olme.dataSource.AllQuestionData;
@@ -89,7 +89,7 @@ public class CommunicationFragment extends Fragment {
         messageCount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MyMessageActivity_.class);
+                Intent intent = new Intent(getActivity(), MessageDetailActivity_.class);
                 startActivity(intent);
             }
         });

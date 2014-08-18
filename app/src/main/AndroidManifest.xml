@@ -98,7 +98,17 @@
 
         <!-- 消息详情 -->
         <activity
-            android:name=".MyMessageActivity_"
+            android:name=".MessageDetailActivity_"
+            android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+
+        <!-- 消息选择 -->
+        <activity
+            android:name=".SelectActivity_"
+            android:theme="@style/MyDialog"></activity>
+
+        <!-- 查看消息主题 -->
+        <activity
+            android:name=".CheckThemeActivity_"
             android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
     </application>
 
